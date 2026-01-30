@@ -63,13 +63,6 @@ export const BentoGridItem = ({
           </span>
         </div>
       )}
-            className="w-10 h-10 rounded-full object-cover border-2 border-neutral-200 dark:border-neutral-700"
-          />
-          <span className="text-sm font-semibold text-neutral-700 dark:text-neutral-300">
-            {profileName}
-          </span>
-        </div>
-      )}
       {header}
       <div className="transition duration-200 group-hover/bento:translate-x-2">
         {icon}

@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button';
-import { ArrowRight, CreditCard, Database, Zap, Shield, Code2, Gauge, Sparkles, Users, Heart, MessageCircle, Send, Bookmark, Facebook, Instagram, Linkedin, Youtube, Drone, Video, Palette, Camera, Clapperboard, Star, Rocket, Briefcase, Trophy, Lightbulb, Zap as ZapIcon } from 'lucide-react';
+import { ArrowRight, CreditCard, Database, Zap, Shield, Code2, Gauge, Sparkles, Users, Heart, MessageCircle, Send, Bookmark, Facebook, Instagram, Linkedin, Youtube, Video, Palette, Camera, Star, Rocket, Briefcase, Trophy, Lightbulb } from 'lucide-react';
 import { Terminal } from './terminal';
 import { BentoGrid, BentoGridItem } from '@/components/ui/bento-grid';
 import { Cover } from "@/components/ui/cover";
