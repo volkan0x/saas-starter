@@ -76,7 +76,8 @@ export default function HomePage() {
                   title="Drone Tanıtım Videoları"
                   description="İşletmenizi ve mekanlarınızı kuş bakışı görüntülerle tanıtın. Profesyonel drone çekimleri ile markanızı farklı bir perspektiften yansıtın."
                   profileName="Drone Studios"
-                  profileIcon={<Video className="w-5 h-5 text-white" />}
+                  profileIcon={<Video className="w-5 h-5" />}
+                  whiteProfileIcon={true}
                   header={
                     <div className="relative h-full w-full overflow-hidden rounded-lg">
                       <video 
@@ -89,15 +90,15 @@ export default function HomePage() {
                         <source src="/influencer_video.webm" type="video/webm" />
                       </video>
                       {/* Action buttons */}
-                      <div className="absolute bottom-0 right-0 left-0 flex gap-3 items-center justify-end p-4 bg-gradient-to-t from-black/30 to-transparent">
-                        <button className="text-white hover:scale-110 transition-transform drop-shadow-lg">
-                          <Heart className="w-6 h-6" />
+                      <div className="absolute bottom-0 left-0 right-0 flex gap-2 items-center justify-center p-4 bg-white/95">
+                        <button className="text-black hover:scale-110 transition-transform rounded-full p-2 hover:bg-gray-200">
+                          <Heart className="w-5 h-5" />
                         </button>
-                        <button className="text-white hover:scale-110 transition-transform drop-shadow-lg">
-                          <MessageCircle className="w-6 h-6" />
+                        <button className="text-black hover:scale-110 transition-transform rounded-full p-2 hover:bg-gray-200">
+                          <MessageCircle className="w-5 h-5" />
                         </button>
-                        <button className="text-white hover:scale-110 transition-transform drop-shadow-lg">
-                          <Bookmark className="w-6 h-6" />
+                        <button className="text-black hover:scale-110 transition-transform rounded-full p-2 hover:bg-gray-200">
+                          <Bookmark className="w-5 h-5" />
                         </button>
                       </div>
                     </div>
@@ -108,7 +109,8 @@ export default function HomePage() {
                   title="Influencer İçerik Üretimi"
                   description="İşletmeniz ve ürünleriniz için influencerlar tarafından oluşturulan özgün UGC içerikler. Hedef kitlenizle güven oluşturan, organik ve etkileşim odaklı video içerikler."
                   profileName="Influencer Creators"
-                  profileIcon={<Sparkles className="w-5 h-5 text-white" />}
+                  profileIcon={<Sparkles className="w-5 h-5" />}
+                  whiteProfileIcon={true}
                   header={
                     <div className="flex h-full w-full items-center justify-center rounded-lg overflow-hidden">
                       <div className="relative w-[180px] h-[320px] overflow-hidden rounded-lg bg-black">
@@ -123,14 +125,14 @@ export default function HomePage() {
                         </video>
                         
                         {/* Action buttons */}
-                        <div className="absolute bottom-0 right-0 left-0 flex gap-3 items-center justify-end p-4 bg-gradient-to-t from-black/30 to-transparent">
-                          <button className="text-white hover:scale-110 transition-transform drop-shadow-lg">
+                        <div className="absolute bottom-0 left-0 right-0 flex gap-2 items-center justify-center p-4 bg-white/95">
+                          <button className="text-black hover:scale-110 transition-transform rounded-full p-2 hover:bg-gray-200">
                             <Heart className="w-6 h-6" />
                           </button>
-                          <button className="text-white hover:scale-110 transition-transform drop-shadow-lg">
+                          <button className="text-black hover:scale-110 transition-transform rounded-full p-2 hover:bg-gray-200">
                             <MessageCircle className="w-6 h-6" />
                           </button>
-                          <button className="text-white hover:scale-110 transition-transform drop-shadow-lg">
+                          <button className="text-black hover:scale-110 transition-transform rounded-full p-2 hover:bg-gray-200">
                             <Bookmark className="w-6 h-6" />
                           </button>
                         </div>
@@ -143,7 +145,8 @@ export default function HomePage() {
                   title="İşinizi Yansıtan Grafik Tasarımları"
                   description="Markanızın kimliğini yansıtan özgün ve profesyonel grafik tasarımlar."
                   profileName="Design Studio"
-                  profileIcon={<Palette className="w-5 h-5 text-white" />}
+                  profileIcon={<Palette className="w-5 h-5" />}
+                  whiteProfileIcon={true}
                   header={
                     <div className="flex h-full w-full items-center justify-center rounded-lg overflow-hidden">
                       <div className="relative overflow-hidden rounded-lg">
@@ -153,14 +156,14 @@ export default function HomePage() {
                           className="h-full w-full object-contain"
                         />
                         {/* Action buttons */}
-                        <div className="absolute bottom-0 right-0 left-0 flex gap-3 items-center justify-end p-4 bg-gradient-to-t from-black/30 to-transparent">
-                          <button className="text-white hover:scale-110 transition-transform drop-shadow-lg">
+                        <div className="absolute bottom-0 left-0 right-0 flex gap-2 items-center justify-center p-4 bg-white/95">
+                          <button className="text-black hover:scale-110 transition-transform rounded-full p-2 hover:bg-gray-200">
                             <Heart className="w-6 h-6" />
                           </button>
-                          <button className="text-white hover:scale-110 transition-transform drop-shadow-lg">
+                          <button className="text-black hover:scale-110 transition-transform rounded-full p-2 hover:bg-gray-200">
                             <MessageCircle className="w-6 h-6" />
                           </button>
-                          <button className="text-white hover:scale-110 transition-transform drop-shadow-lg">
+                          <button className="text-black hover:scale-110 transition-transform rounded-full p-2 hover:bg-gray-200">
                             <Bookmark className="w-6 h-6" />
                           </button>
                         </div>
@@ -201,17 +204,17 @@ export default function HomePage() {
                           <source src="/sosyal-medya-video.webm" type="video/webm" />
                         </video>
                         {/* Action buttons */}
-                        <div className="absolute bottom-0 right-0 left-0 flex gap-3 items-center justify-end p-4 bg-gradient-to-t from-black/30 to-transparent">
-                          <button className="text-white hover:scale-110 transition-transform drop-shadow-lg">
+                        <div className="absolute bottom-0 left-0 right-0 flex gap-2 items-center justify-center p-4 bg-white/95">
+                          <button className="text-black hover:scale-110 transition-transform rounded-full p-2 hover:bg-gray-200">
                             <Heart className="w-6 h-6" />
                           </button>
-                          <button className="text-white hover:scale-110 transition-transform drop-shadow-lg">
+                          <button className="text-black hover:scale-110 transition-transform rounded-full p-2 hover:bg-gray-200">
                             <MessageCircle className="w-6 h-6" />
                           </button>
-                          <button className="text-white hover:scale-110 transition-transform drop-shadow-lg">
+                          <button className="text-black hover:scale-110 transition-transform rounded-full p-2 hover:bg-gray-200">
                             <Send className="w-6 h-6" />
                           </button>
-                          <button className="text-white hover:scale-110 transition-transform drop-shadow-lg">
+                          <button className="text-black hover:scale-110 transition-transform rounded-full p-2 hover:bg-gray-200">
                             <Bookmark className="w-6 h-6" />
                           </button>
                         </div>
@@ -240,17 +243,17 @@ export default function HomePage() {
                         </video>
                         
                         {/* Action buttons */}
-                        <div className="absolute bottom-0 right-0 left-0 flex gap-3 items-center justify-end p-4 bg-gradient-to-t from-black/30 to-transparent">
-                          <button className="text-white hover:scale-110 transition-transform drop-shadow-lg">
+                        <div className="absolute bottom-0 left-0 right-0 flex gap-2 items-center justify-center p-4 bg-white/95">
+                          <button className="text-black hover:scale-110 transition-transform rounded-full p-2 hover:bg-gray-200">
                             <Heart className="w-6 h-6" />
                           </button>
-                          <button className="text-white hover:scale-110 transition-transform drop-shadow-lg">
+                          <button className="text-black hover:scale-110 transition-transform rounded-full p-2 hover:bg-gray-200">
                             <MessageCircle className="w-6 h-6" />
                           </button>
-                          <button className="text-white hover:scale-110 transition-transform drop-shadow-lg">
+                          <button className="text-black hover:scale-110 transition-transform rounded-full p-2 hover:bg-gray-200">
                             <Send className="w-6 h-6" />
                           </button>
-                          <button className="text-white hover:scale-110 transition-transform drop-shadow-lg">
+                          <button className="text-black hover:scale-110 transition-transform rounded-full p-2 hover:bg-gray-200">
                             <Bookmark className="w-6 h-6" />
                           </button>
                         </div>
@@ -279,17 +282,17 @@ export default function HomePage() {
                         </video>
                         
                         {/* Action buttons */}
-                        <div className="absolute bottom-0 right-0 left-0 flex gap-3 items-center justify-end p-4 bg-gradient-to-t from-black/30 to-transparent">
-                          <button className="text-white hover:scale-110 transition-transform drop-shadow-lg">
+                        <div className="absolute bottom-0 left-0 right-0 flex gap-2 items-center justify-center p-4 bg-white/95">
+                          <button className="text-black hover:scale-110 transition-transform rounded-full p-2 hover:bg-gray-200">
                             <Heart className="w-6 h-6" />
                           </button>
-                          <button className="text-white hover:scale-110 transition-transform drop-shadow-lg">
+                          <button className="text-black hover:scale-110 transition-transform rounded-full p-2 hover:bg-gray-200">
                             <MessageCircle className="w-6 h-6" />
                           </button>
-                          <button className="text-white hover:scale-110 transition-transform drop-shadow-lg">
+                          <button className="text-black hover:scale-110 transition-transform rounded-full p-2 hover:bg-gray-200">
                             <Send className="w-6 h-6" />
                           </button>
-                          <button className="text-white hover:scale-110 transition-transform drop-shadow-lg">
+                          <button className="text-black hover:scale-110 transition-transform rounded-full p-2 hover:bg-gray-200">
                             <Bookmark className="w-6 h-6" />
                           </button>
                         </div>
@@ -318,17 +321,17 @@ export default function HomePage() {
                         </video>
                         
                         {/* Action buttons */}
-                        <div className="absolute bottom-0 right-0 left-0 flex gap-3 items-center justify-end p-4 bg-gradient-to-t from-black/30 to-transparent">
-                          <button className="text-white hover:scale-110 transition-transform drop-shadow-lg">
+                        <div className="absolute bottom-0 left-0 right-0 flex gap-2 items-center justify-center p-4 bg-white/95">
+                          <button className="text-black hover:scale-110 transition-transform rounded-full p-2 hover:bg-gray-200">
                             <Heart className="w-6 h-6" />
                           </button>
-                          <button className="text-white hover:scale-110 transition-transform drop-shadow-lg">
+                          <button className="text-black hover:scale-110 transition-transform rounded-full p-2 hover:bg-gray-200">
                             <MessageCircle className="w-6 h-6" />
                           </button>
-                          <button className="text-white hover:scale-110 transition-transform drop-shadow-lg">
+                          <button className="text-black hover:scale-110 transition-transform rounded-full p-2 hover:bg-gray-200">
                             <Send className="w-6 h-6" />
                           </button>
-                          <button className="text-white hover:scale-110 transition-transform drop-shadow-lg">
+                          <button className="text-black hover:scale-110 transition-transform rounded-full p-2 hover:bg-gray-200">
                             <Bookmark className="w-6 h-6" />
                           </button>
                         </div>
@@ -352,14 +355,14 @@ export default function HomePage() {
                         />
                         
                         {/* Action buttons */}
-                        <div className="absolute bottom-0 right-0 left-0 flex gap-3 items-center justify-end p-4 bg-gradient-to-t from-black/30 to-transparent">
-                          <button className="text-white hover:scale-110 transition-transform drop-shadow-lg">
+                        <div className="absolute bottom-0 left-0 right-0 flex gap-2 items-center justify-center p-4 bg-white/95">
+                          <button className="text-black hover:scale-110 transition-transform rounded-full p-2 hover:bg-gray-200">
                             <Heart className="w-6 h-6" />
                           </button>
-                          <button className="text-white hover:scale-110 transition-transform drop-shadow-lg">
+                          <button className="text-black hover:scale-110 transition-transform rounded-full p-2 hover:bg-gray-200">
                             <MessageCircle className="w-6 h-6" />
                           </button>
-                          <button className="text-white hover:scale-110 transition-transform drop-shadow-lg">
+                          <button className="text-black hover:scale-110 transition-transform rounded-full p-2 hover:bg-gray-200">
                             <Bookmark className="w-6 h-6" />
                           </button>
                         </div>
@@ -387,14 +390,14 @@ export default function HomePage() {
                         </video>
                         
                         {/* Action buttons */}
-                        <div className="absolute bottom-0 right-0 left-0 flex gap-3 items-center justify-end p-4 bg-gradient-to-t from-black/30 to-transparent">
-                          <button className="text-white hover:scale-110 transition-transform drop-shadow-lg">
+                        <div className="absolute bottom-0 left-0 right-0 flex gap-2 items-center justify-center p-4 bg-white/95">
+                          <button className="text-black hover:scale-110 transition-transform rounded-full p-2 hover:bg-gray-200">
                             <Heart className="w-6 h-6" />
                           </button>
-                          <button className="text-white hover:scale-110 transition-transform drop-shadow-lg">
+                          <button className="text-black hover:scale-110 transition-transform rounded-full p-2 hover:bg-gray-200">
                             <MessageCircle className="w-6 h-6" />
                           </button>
-                          <button className="text-white hover:scale-110 transition-transform drop-shadow-lg">
+                          <button className="text-black hover:scale-110 transition-transform rounded-full p-2 hover:bg-gray-200">
                             <Bookmark className="w-6 h-6" />
                           </button>
                         </div>
@@ -422,14 +425,14 @@ export default function HomePage() {
                         </video>
                         
                         {/* Action buttons */}
-                        <div className="absolute bottom-0 right-0 left-0 flex gap-3 items-center justify-end p-4 bg-gradient-to-t from-black/30 to-transparent">
-                          <button className="text-white hover:scale-110 transition-transform drop-shadow-lg">
+                        <div className="absolute bottom-0 left-0 right-0 flex gap-2 items-center justify-center p-4 bg-white/95">
+                          <button className="text-black hover:scale-110 transition-transform rounded-full p-2 hover:bg-gray-200">
                             <Heart className="w-6 h-6" />
                           </button>
-                          <button className="text-white hover:scale-110 transition-transform drop-shadow-lg">
+                          <button className="text-black hover:scale-110 transition-transform rounded-full p-2 hover:bg-gray-200">
                             <MessageCircle className="w-6 h-6" />
                           </button>
-                          <button className="text-white hover:scale-110 transition-transform drop-shadow-lg">
+                          <button className="text-black hover:scale-110 transition-transform rounded-full p-2 hover:bg-gray-200">
                             <Bookmark className="w-6 h-6" />
                           </button>
                         </div>
@@ -511,14 +514,14 @@ export default function HomePage() {
                         />
                         
                         {/* Action buttons */}
-                        <div className="absolute bottom-0 right-0 left-0 flex gap-3 items-center justify-end p-4 bg-gradient-to-t from-black/30 to-transparent">
-                          <button className="text-white hover:scale-110 transition-transform drop-shadow-lg">
+                        <div className="absolute bottom-0 left-0 right-0 flex gap-2 items-center justify-center p-4 bg-white/95">
+                          <button className="text-black hover:scale-110 transition-transform rounded-full p-2 hover:bg-gray-200">
                             <Heart className="w-6 h-6" />
                           </button>
-                          <button className="text-white hover:scale-110 transition-transform drop-shadow-lg">
+                          <button className="text-black hover:scale-110 transition-transform rounded-full p-2 hover:bg-gray-200">
                             <MessageCircle className="w-6 h-6" />
                           </button>
-                          <button className="text-white hover:scale-110 transition-transform drop-shadow-lg">
+                          <button className="text-black hover:scale-110 transition-transform rounded-full p-2 hover:bg-gray-200">
                             <Bookmark className="w-6 h-6" />
                           </button>
                         </div>
@@ -547,14 +550,14 @@ export default function HomePage() {
                         </video>
                         
                         {/* Action buttons */}
-                        <div className="absolute bottom-0 right-0 left-0 flex gap-3 items-center justify-end p-4 bg-gradient-to-t from-black/30 to-transparent">
-                          <button className="text-white hover:scale-110 transition-transform drop-shadow-lg">
+                        <div className="absolute bottom-0 left-0 right-0 flex gap-2 items-center justify-center p-4 bg-white/95">
+                          <button className="text-black hover:scale-110 transition-transform rounded-full p-2 hover:bg-gray-200">
                             <Heart className="w-6 h-6" />
                           </button>
-                          <button className="text-white hover:scale-110 transition-transform drop-shadow-lg">
+                          <button className="text-black hover:scale-110 transition-transform rounded-full p-2 hover:bg-gray-200">
                             <MessageCircle className="w-6 h-6" />
                           </button>
-                          <button className="text-white hover:scale-110 transition-transform drop-shadow-lg">
+                          <button className="text-black hover:scale-110 transition-transform rounded-full p-2 hover:bg-gray-200">
                             <Bookmark className="w-6 h-6" />
                           </button>
                         </div>
@@ -581,14 +584,14 @@ export default function HomePage() {
                           <source src="/vimeo-video-original.mp4" type="video/mp4" />
                         </video>
                         {/* Action buttons */}
-                        <div className="absolute bottom-0 right-0 left-0 flex gap-3 items-center justify-end p-4 bg-gradient-to-t from-black/30 to-transparent">
-                          <button className="text-white hover:scale-110 transition-transform drop-shadow-lg">
+                        <div className="absolute bottom-0 left-0 right-0 flex gap-2 items-center justify-center p-4 bg-white/95">
+                          <button className="text-black hover:scale-110 transition-transform rounded-full p-2 hover:bg-gray-200">
                             <Heart className="w-6 h-6" />
                           </button>
-                          <button className="text-white hover:scale-110 transition-transform drop-shadow-lg">
+                          <button className="text-black hover:scale-110 transition-transform rounded-full p-2 hover:bg-gray-200">
                             <MessageCircle className="w-6 h-6" />
                           </button>
-                          <button className="text-white hover:scale-110 transition-transform drop-shadow-lg">
+                          <button className="text-black hover:scale-110 transition-transform rounded-full p-2 hover:bg-gray-200">
                             <Bookmark className="w-6 h-6" />
                           </button>
                         </div>

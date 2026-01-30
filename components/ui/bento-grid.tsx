@@ -28,6 +28,7 @@ export const BentoGridItem = ({
   profileImage,
   profileName,
   profileIcon,
+  whiteProfileIcon,
 }: {
   className?: string;
   title?: string | React.ReactNode;
@@ -37,6 +38,7 @@ export const BentoGridItem = ({
   profileImage?: string;
   profileName?: string;
   profileIcon?: React.ReactNode;
+  whiteProfileIcon?: boolean;
 }) => {
   return (
     <div
@@ -48,8 +50,16 @@ export const BentoGridItem = ({
       {profileName && (
         <div className="flex items-center gap-3 mb-2">
           {profileIcon ? (
-            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center">
-              {profileIcon}
+            <div className={`w-10 h-10 rounded-full flex items-center justify-center ${
+              whiteProfileIcon
+                ? "bg-white border-2 border-neutral-200"
+                : "bg-gradient-to-br from-orange-400 to-orange-600"
+            }`}>
+              {whiteProfileIcon ? (
+                <div className="text-black">{profileIcon}</div>
+              ) : (
+                profileIcon
+              )}
             </div>
           ) : profileImage ? (
             <img
