@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button';
-import { ArrowRight, CreditCard, Database, Zap, Shield, Code2, Gauge, Sparkles, Users, Heart, MessageCircle, Send, Bookmark, Facebook, Instagram, Linkedin, Youtube } from 'lucide-react';
+import { ArrowRight, CreditCard, Database, Zap, Shield, Code2, Gauge, Sparkles, Users, Heart, MessageCircle, Send, Bookmark, Facebook, Instagram, Linkedin, Youtube, Drone, Video, Palette, Camera, Clapperboard, Star, Rocket, Briefcase, Trophy, Lightbulb, Zap as ZapIcon } from 'lucide-react';
 import { Terminal } from './terminal';
 import { BentoGrid, BentoGridItem } from '@/components/ui/bento-grid';
 import { Cover } from "@/components/ui/cover";
@@ -75,6 +75,8 @@ export default function HomePage() {
                 <BentoGridItem
                   title="Drone Tanıtım Videoları"
                   description="İşletmenizi ve mekanlarınızı kuş bakışı görüntülerle tanıtın. Profesyonel drone çekimleri ile markanızı farklı bir perspektiften yansıtın."
+                  profileName="Drone Studios"
+                  profileIcon={<Video className="w-5 h-5 text-white" />}
                   header={
                     <div className="relative h-full w-full overflow-hidden rounded-lg">
                       <video 
@@ -105,6 +107,8 @@ export default function HomePage() {
                 <BentoGridItem
                   title="Influencer İçerik Üretimi"
                   description="İşletmeniz ve ürünleriniz için influencerlar tarafından oluşturulan özgün UGC içerikler. Hedef kitlenizle güven oluşturan, organik ve etkileşim odaklı video içerikler."
+                  profileName="Influencer Creators"
+                  profileIcon={<Sparkles className="w-5 h-5 text-white" />}
                   header={
                     <div className="flex h-full w-full items-center justify-center rounded-lg overflow-hidden">
                       <div className="relative w-[180px] h-[320px] overflow-hidden rounded-lg bg-black">
@@ -138,6 +142,8 @@ export default function HomePage() {
                 <BentoGridItem
                   title="İşinizi Yansıtan Grafik Tasarımları"
                   description="Markanızın kimliğini yansıtan özgün ve profesyonel grafik tasarımlar."
+                  profileName="Design Studio"
+                  profileIcon={<Palette className="w-5 h-5 text-white" />}
                   header={
                     <div className="flex h-full w-full items-center justify-center rounded-lg overflow-hidden">
                       <div className="relative overflow-hidden rounded-lg">
@@ -180,6 +186,8 @@ export default function HomePage() {
         <BentoGridItem
                   title="Profesyonel Sosyal Medya Yönetimi"
                   description="Markanızın sosyal medya varlığını güçlendiren, stratejik içerik planlama ve topluluk yönetimi hizmetleri."
+                  profileImage="/instagram4.jpg"
+                  profileName="Social Media Pro"
                   header={
                     <div className="flex h-full w-full items-center justify-center rounded-lg overflow-hidden">
                       <div className="relative w-[550px] h-[480px] overflow-hidden rounded-lg bg-black">
@@ -215,6 +223,8 @@ export default function HomePage() {
                 <BentoGridItem
                   title="Viral Video İçerikleri"
                   description="Ürün ve hizmetlerinizi görsel olarak anlatan, profesyonel video animasyonlar."
+                  profileImage="/instagram5.jpg"
+                  profileName="Content Creator"
                   header={
 
                     <div className="flex h-full w-full items-center justify-center rounded-lg overflow-hidden">
@@ -249,10 +259,11 @@ export default function HomePage() {
                   }
                   className="md:col-span-1 md:row-span-2"
                 />
-                
                 <BentoGridItem
                   title="Viral Video İçerikleri"
                   description="Ürün ve hizmetlerinizi görsel olarak anlatan, profesyonel video animasyonlar."
+                  profileImage="/instagram6.jpg"
+                  profileName="Viral Studio"
                   header={
 
                     <div className="flex h-full w-full items-center justify-center rounded-lg overflow-hidden">
@@ -290,6 +301,8 @@ export default function HomePage() {
                 <BentoGridItem
                   title="Viral Video İçerikleri"
                   description="Ürün ve hizmetlerinizi görsel olarak anlatan, profesyonel video animasyonlar."
+                  profileImage="/instagram7.jpg"
+                  profileName="Graphic Designer"
                   header={
 
                     <div className="flex h-full w-full items-center justify-center rounded-lg overflow-hidden">
@@ -327,6 +340,8 @@ export default function HomePage() {
                 <BentoGridItem
                   title="Özel Grafik Tasarımlar"
                   description="Markanıza özel, dikkat çekici ve profesyonel grafik tasarım çözümleri."
+                  profileImage="/instagram8.jpg"
+                  profileName="Animation Pro"
                   header={
                     <div className="flex h-full w-full max-w-[1000px] items-center justify-center rounded-lg overflow-hidden">
                       <div className="relative aspect-square w-full  overflow-hidden rounded-lg">
@@ -356,6 +371,8 @@ export default function HomePage() {
                 <BentoGridItem
                   title="Profesyonel Logo Animasyonları"
                   description="İşletmeniz için profesyonel video çekimleri ve kurguları."
+                  profileImage="/instagram9.jpg"
+                  profileName="3D Studio"
                   header={
                     <div className="flex h-full w-full items-center justify-center rounded-lg overflow-hidden">
                       <div className="relative h-full w-full overflow-hidden rounded-lg bg-black">
@@ -389,6 +406,8 @@ export default function HomePage() {
                 <BentoGridItem
                   title="Profesyonel 3D Animasyon ve VR Efektleri"
                   description="İşletmeniz için profesyonel video çekimleri ve kurguları."
+                  profileImage="/instagram1.jpg"
+                  profileName="Brand Hotel"
                   header={
                     <div className="flex h-full w-full items-center justify-center rounded-lg overflow-hidden">
                       <div className="relative h-full w-full overflow-hidden rounded-lg bg-black">
@@ -422,6 +441,8 @@ export default function HomePage() {
                 <BentoGridItem
                   title="Instagram Profil Yönetimi"
                   description="Profesyonel Instagram profil yönetimi ve içerik stratejisi ile takipçi kitlenizi büyütün."
+                  profileImage="/instagram4.jpg"
+                  profileName="Social Media"
                   header={
                     <div className="flex h-full w-full items-center justify-center rounded-lg overflow-hidden bg-gradient-to-br from-purple-50 to-pink-50 p-4">
                       <div className="w-full max-w-[320px] bg-white rounded-lg shadow-sm">
@@ -478,6 +499,8 @@ export default function HomePage() {
                 <BentoGridItem
                   title="Özel Grafik Tasarımlar"
                   description="Markanıza özel, dikkat çekici ve profesyonel grafik tasarım çözümleri."
+                  profileImage="/instagram2.jpg"
+                  profileName="Design Expert"
                   header={
                     <div className="h-full w-full max-w-[1000px] items-center justify-center rounded-lg overflow-hidden">
                       <div className="relative aspect-square w-full  overflow-hidden rounded-lg">
@@ -508,6 +531,8 @@ export default function HomePage() {
                 <BentoGridItem
                   title="Profesyonel Video İçerikler"
                   description="İşletmeniz için profesyonel video çekimleri ve kurguları."
+                  profileImage="/instagram3.jpg"
+                  profileName="Pro Video Team"
                   header={
                     <div className="flex h-full w-full items-center justify-center rounded-lg overflow-hidden">
                       <div className="relative h-full w-full overflow-hidden rounded-lg bg-black">
@@ -541,6 +566,8 @@ export default function HomePage() {
                 <BentoGridItem
                   title="Profesyonel Video İçerikler"
                   description="İşletmeniz için profesyonel video çekimleri ve kurguları."
+                  profileImage="/instagram6.jpg"
+                  profileName="Video Studio"
                   header={
                     <div className="flex h-full w-full items-center justify-center rounded-lg overflow-hidden">
                       <div className="relative h-full w-full overflow-hidden rounded-lg bg-black">

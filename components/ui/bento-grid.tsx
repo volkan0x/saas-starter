@@ -25,12 +25,18 @@ export const BentoGridItem = ({
   description,
   header,
   icon,
+  profileImage,
+  profileName,
+  profileIcon,
 }: {
   className?: string;
   title?: string | React.ReactNode;
   description?: string | React.ReactNode;
   header?: React.ReactNode;
   icon?: React.ReactNode;
+  profileImage?: string;
+  profileName?: string;
+  profileIcon?: React.ReactNode;
 }) => {
   return (
     <div
@@ -39,6 +45,31 @@ export const BentoGridItem = ({
         className,
       )}
     >
+      {profileName && (
+        <div className="flex items-center gap-3 mb-2">
+          {profileIcon ? (
+            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center">
+              {profileIcon}
+            </div>
+          ) : profileImage ? (
+            <img
+              src={profileImage}
+              alt={profileName}
+              className="w-10 h-10 rounded-full object-cover border-2 border-neutral-200 dark:border-neutral-700"
+            />
+          ) : null}
+          <span className="text-sm font-semibold text-neutral-700 dark:text-neutral-300">
+            {profileName}
+          </span>
+        </div>
+      )}
+            className="w-10 h-10 rounded-full object-cover border-2 border-neutral-200 dark:border-neutral-700"
+          />
+          <span className="text-sm font-semibold text-neutral-700 dark:text-neutral-300">
+            {profileName}
+          </span>
+        </div>
+      )}
       {header}
       <div className="transition duration-200 group-hover/bento:translate-x-2">
         {icon}
