@@ -121,7 +121,7 @@ export default function HomePage() {
                           playsInline
                           className="h-full w-full object-cover"
                         >
-                          <source src="/video1feedbird_first13sec.webm" type="video/webm" />
+                          <source src="/video1feedbird_first13sec.mp4" type="video/webm" />
                         </video>
                         
                         {/* Action buttons */}
