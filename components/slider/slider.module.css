@@ -1,0 +1,97 @@
+.container {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 88px);
+  overflow: hidden;
+}
+
+.slider {
+  position: absolute;
+  top: 5vh;
+  width: 100vw;
+  height: 100vh;
+  perspective: 175px;
+  perspective-origin: 50% 100%;
+  overflow: hidden;
+}
+
+.card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0px);
+  width: min(65%, 900px);
+  height: 500px;
+  background: #000;
+  border-right: 1px solid #303030;
+  border-radius: 7px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #303030;
+  border-radius: 8px;
+  z-index: 2;
+}
+
+.cardInfo {
+  width: 100%;
+  padding: 0.5em 0.75em;
+  display: flex;
+  align-items: center;
+  background-color: #000;
+  z-index: 2;
+}
+
+.cardItem {
+  flex: 1;
+}
+
+.cardItem p {
+  font-size: 7px;
+  color: #6a6a6a;
+}
+
+.cardItem:nth-child(2) {
+  text-align: center;
+}
+
+.cardItem:nth-child(2) p {
+  font-size: 8px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.cardItem:nth-child(3) {
+  text-align: right;
+}
+
+.videoPlayer {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.videoPlayer > div {
+  position: relative;
+  transform: scale(1.5);
+}
+
+@media (max-width: 900px) {
+  .videoPlayer > div {
+    transform: scale(3);
+  }
+
+  .card {
+    width: 90%;
+    height: 420px;
+  }
+}

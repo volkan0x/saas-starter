@@ -3,7 +3,7 @@
 # Git Push Script with Pre-Push Checks
 # This script runs quality checks before pushing code to remote
 
-set -e
+set -euo pipefail
 
 # Colors for output
 RED='\033[0;31m'
@@ -29,6 +29,51 @@ print_error() {
     echo -e "${RED}[ERROR]${NC} $1"
 }
 
+usage() {
+    cat <<'EOF'
+Usage: ./scripts/git-push.sh [options]
+
+Options:
+  --check=type|build|none   Select pre-push check mode (default: type)
+  --auto-commit             Auto stage and commit if working tree is dirty
+  --message="..."           Commit message to use with --auto-commit
+  -h, --help                Show this help message
+EOF
+}
+
+CHECK_MODE="type"
+AUTO_COMMIT=false
+COMMIT_MESSAGE=""
+
+for arg in "$@"; do
+    case "$arg" in
+        --check=type)
+            CHECK_MODE="type"
+            ;;
+        --check=build)
+            CHECK_MODE="build"
+            ;;
+        --check=none)
+            CHECK_MODE="none"
+            ;;
+        --auto-commit)
+            AUTO_COMMIT=true
+            ;;
+        --message=*)
+            COMMIT_MESSAGE="${arg#*=}"
+            ;;
+        -h|--help)
+            usage
+            exit 0
+            ;;
+        *)
+            print_error "Unknown option: $arg"
+            usage
+            exit 1
+            ;;
+    esac
+done
+
 # Function to check if git repository exists
 check_git_repo() {
     if ! git rev-parse --git-dir > /dev/null 2>&1; then
@@ -43,15 +88,17 @@ check_uncommitted_changes() {
         print_warning "You have uncommitted changes:"
         git status -s
         echo ""
-        read -p "Do you want to commit these changes? (y/n): " -n 1 -r
-        echo ""
-        if [[ $REPLY =~ ^[Yy]$ ]]; then
+        if [ "$AUTO_COMMIT" = true ]; then
             git add .
-            read -p "Enter commit message: " commit_msg
-            git commit -m "$commit_msg"
+            if [ -z "$COMMIT_MESSAGE" ]; then
+                print_error "--auto-commit requires --message=\"your commit message\""
+                exit 1
+            fi
+            git commit -m "$COMMIT_MESSAGE"
             print_success "Changes committed!"
         else
-            print_warning "Proceeding without committing changes..."
+            print_error "Working tree is dirty. Commit/stash your changes or use --auto-commit with --message."
+            exit 1
         fi
     else
         print_status "No uncommitted changes found."
@@ -61,6 +108,14 @@ check_uncommitted_changes() {
 # Function to get current branch
 get_current_branch() {
     git rev-parse --abbrev-ref HEAD
+}
+
+ensure_not_detached_head() {
+    local branch=$1
+    if [ "$branch" = "HEAD" ]; then
+        print_error "Detached HEAD detected. Switch to a branch before pushing."
+        exit 1
+    fi
 }
 
 # Function to check if branch exists on remote
@@ -146,6 +201,7 @@ main() {
     
     # Get current branch
     current_branch=$(get_current_branch)
+    ensure_not_detached_head "$current_branch"
     print_status "Current branch: $current_branch"
     
     # Check for uncommitted changes
@@ -154,34 +210,22 @@ main() {
     # Check for sensitive data
     check_sensitive_data
     
-    # Ask if user wants to run checks
     echo ""
-    print_status "Pre-push checks available:"
-    echo "  1. TypeScript type check (fast)"
-    echo "  2. Full build check (slower)"
-    echo "  3. Skip checks"
-    echo ""
-    read -p "Select option (1-3): " -n 1 -r check_option
-    echo ""
-    
-    case $check_option in
-        1)
+    case "$CHECK_MODE" in
+        type)
             if ! run_typescript_check; then
                 print_error "TypeScript check failed. Fix errors before pushing."
                 exit 1
             fi
             ;;
-        2)
+        build)
             if ! run_build_check; then
                 print_error "Build check failed. Fix errors before pushing."
                 exit 1
             fi
             ;;
-        3)
-            print_warning "Skipping pre-push checks..."
-            ;;
-        *)
-            print_warning "Invalid option. Skipping checks..."
+        none)
+            print_warning "Skipping pre-push checks (--check=none)..."
             ;;
     esac
     

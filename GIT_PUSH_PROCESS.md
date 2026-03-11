@@ -16,6 +16,19 @@ This guide provides comprehensive instructions for the git workflow and push pro
 
 ## 🚀 Quick Reference
 
+### Recommended Team Flow
+```bash
+# 1) Work on a feature/fix branch
+git checkout -b feature/your-change
+
+# 2) Make changes, stage, and commit
+git add .
+git commit -m "feat: short and clear description"
+
+# 3) Run automated push checks + push
+pnpm run git:push
+```
+
 ### Basic Push Flow
 ```bash
 # Stage changes
@@ -30,8 +43,17 @@ git push origin <branch-name>
 
 ### Using the Automated Script
 ```bash
-# Run the git push script (includes checks)
+# Fast type-check + push
 pnpm run git:push
+
+# Full build check + push
+pnpm run git:push -- --check=build
+
+# Skip checks (not recommended)
+pnpm run git:push -- --check=none
+
+# Auto-commit dirty tree then push
+pnpm run git:push -- --auto-commit --message="chore: update files"
 ```
 
 ---
@@ -153,7 +175,16 @@ Create automated push with checks:
 ```bash
 # Run pre-push checks and push
 pnpm run git:push
+
+# Help/usage
+pnpm run git:push -- --help
 ```
+
+### Script Behavior
+- Stops if working tree is dirty unless `--auto-commit --message="..."` is provided
+- Blocks push on failed checks
+- Pulls latest commits with rebase before push (`git pull --rebase`)
+- Creates upstream automatically for first push of a new branch
 
 ### Manual Pre-Push Checks
 
