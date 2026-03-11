@@ -26,9 +26,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`bg-white dark:bg-gray-950 text-black dark:text-white ${inter.className}`}
+      className={`bg-gray-200 dark:bg-gray-950 text-black dark:text-white ${inter.className}`}
     >
-      <body className="min-h-[100dvh] bg-gray-50">
+      <body className="min-h-[100dvh] bg-gray-200">
         <SWRConfig
           value={{
             fallback: process.env.POSTGRES_URL

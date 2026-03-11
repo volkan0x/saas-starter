@@ -6,11 +6,13 @@ import { Cover } from "@/components/ui/cover";
 import { ContainerTextFlip } from "@/components/ui/container-text-flip";
 import { DottedGlowBackground } from '@/components/ui/dotted-glow-background';
 import { DropdownButton } from "@/components/ui/dropdown";
+import NavbarDemo from '@/components/navbar-menu-demo';
 
 
 export default function HomePage() {
   return (
-    <main>
+    <main className="bg-gray-100">
+      <NavbarDemo />
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="lg:grid lg:grid-cols-12 lg:gap-8">

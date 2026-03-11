@@ -2,7 +2,6 @@
 
 import Link from 'next/link';
 import { use, useState, Suspense } from 'react';
-import { Button } from '@/components/ui/button';
 import { CircleIcon, Home, LogOut } from 'lucide-react';
 import {
   DropdownMenu,
@@ -30,13 +29,7 @@ function UserMenu() {
   }
 
   if (!user) {
-    return (
-      <>
-        <Button asChild className="rounded-full">
-          <Link href="/bir-gorusme-planla">Görüşme Ayarla</Link>
-        </Button>
-      </>
-    );
+    return null;
   }
 
   return (
@@ -75,7 +68,7 @@ function UserMenu() {
 function Header() {
   return (
     <header className="border-b border-gray-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+      <div className="max-w-2xl mx-auto px-12 py-4 flex justify-between items-center">
         <Link href="/" className="flex items-center">
           <CircleIcon className="h-6 w-6 text-orange-500" />
           <span className="ml-2 text-xl font-semibold text-gray-900">Ajans 99</span>
@@ -92,9 +85,9 @@ function Header() {
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <section className="flex flex-col min-h-screen">
+    <section className="flex flex-col min-h-screen bg-gray-100">
       <Header />
-      {children}
+      <div className="flex-1 bg-gray-100">{children}</div>
     </section>
   );
 }
