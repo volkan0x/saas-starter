@@ -1,45 +1,35 @@
 .container {
-  position: relative;
   width: 100%;
-  height: calc(100vh - 88px);
-  overflow: hidden;
+  padding: 24px 16px 48px;
 }
 
-.slider {
-  position: absolute;
-  top: 5vh;
-  width: 100vw;
-  height: 100vh;
-  perspective: 175px;
-  perspective-origin: 50% 100%;
-  overflow: hidden;
+.grid {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 16px;
+}
+
+@media (min-width: 640px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
 .card {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate3d(-50%, -50%, 0px);
-  width: min(65%, 900px);
-  height: 500px;
   background: #000;
-  border-right: 1px solid #303030;
-  border-radius: 7px;
+  border: 1px solid #303030;
+  border-radius: 10px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-}
-
-.card::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 1px solid #303030;
-  border-radius: 8px;
-  z-index: 2;
 }
 
 .cardInfo {
@@ -48,7 +38,7 @@
   display: flex;
   align-items: center;
   background-color: #000;
-  z-index: 2;
+  border-bottom: 1px solid #202020;
 }
 
 .cardItem {
@@ -74,24 +64,25 @@
   text-align: right;
 }
 
-.videoPlayer {
+.media {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  position: relative;
+  overflow: hidden;
+  background: #000;
+}
+
+.mediaEl {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  border: 0;
+  background: #000;
 }
 
-.videoPlayer > div {
-  position: relative;
-  transform: scale(1.5);
+.mediaVideo {
+  object-fit: contain;
 }
 
-@media (max-width: 900px) {
-  .videoPlayer > div {
-    transform: scale(3);
-  }
 
-  .card {
-    width: 90%;
-    height: 420px;
-  }
-}
