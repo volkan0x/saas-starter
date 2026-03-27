@@ -9,6 +9,7 @@ import { DropdownButton } from "@/components/ui/dropdown";
 import NavbarDemo from '@/components/navbar-menu-demo';
 import PhotosGallerySection from "@/components/photos-gallery/PhotosGallerySection";
 import { websiteProjectsGalleryPhotos } from "@/lib/website-projects-gallery";
+import Slider from "@/components/slider/Slider";
 
 
 export default function HomePage() {
@@ -196,9 +197,19 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="bg-gray-900 pb-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <h2 className="text-2xl sm:text-3xl font-semibold text-white">Website Projeleri</h2>
+          <p className="mt-2 text-sm sm:text-base text-gray-300">
+            Kartlara tıklayarak projeleri yeni pencerede veya modalda inceleyebilirsin.
+          </p>
+        </div>
+        <Slider />
+      </section>
+
       <PhotosGallerySection
         className="pt-0 pb-8"
-        title="Website Projeleri"
+        title="Video ve Sosyal Medya İçerikleri"
         description="Web ve mobil projelerimizden seçili örnekleri aşağıda filtreleyerek inceleyebilirsin."
         photos={websiteProjectsGalleryPhotos}
         layout="instagram"

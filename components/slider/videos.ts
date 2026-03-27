@@ -18,6 +18,15 @@ export const videos: SliderVideo[] = [
     siteUrl: "https://storefront-production-f35a.up.railway.app/dk/store",
   },
   {
+    id: "medusa-admin.webm",
+    title: "E-ticaret Admin Paneli",
+    category: "E-commerce",
+    date: "March 2026",
+    src: "/medusa-frontend.webm",
+    siteUrl: "https://medusajs.com/admin/",
+    openInNewTab: true,
+  },
+  {
     id: "havadurumu.webm",
     title: "Hava Durumu",
     category: "Weather",
@@ -35,7 +44,7 @@ export const videos: SliderVideo[] = [
   },
   {
     id: "uzmantasimaci.webm",
-    title: "Uzman Taşımacı",
+    title: "Uzman Nakliyat",
     category: "Nature",
     date: "March 2026",
     src: "/uzmantasimaci.webm",

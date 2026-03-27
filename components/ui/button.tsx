@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Slot as SlotPrimitive } from "radix-ui";;
+import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
 
 import { cn } from "@/lib/utils";
@@ -50,7 +50,7 @@ function Button({
     iconLeading?: React.ComponentType<React.SVGProps<SVGSVGElement>>;
     iconTrailing?: React.ComponentType<React.SVGProps<SVGSVGElement>>;
   }) {
-  const Comp = asChild ? SlotPrimitive.Slot : "button";
+  const Comp = asChild ? Slot : "button";
   
   // When using asChild with icons, we can't pass multiple children to Slot
   // So we ignore icons when asChild is true
