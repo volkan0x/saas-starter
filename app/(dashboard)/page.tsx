@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button';
-import { ArrowRight, CreditCard, Database, Zap, Shield, Code2, Gauge, Sparkles, Users, Heart, MessageCircle, Send, Bookmark, Facebook, Instagram, Linkedin, Youtube, Video, Palette, Camera, Star, Rocket, Briefcase, Trophy, Lightbulb, Clapperboard } from 'lucide-react';
+import { CreditCard, Database, Zap, Shield, Code2, Gauge, Sparkles, Users, Heart, MessageCircle, Send, Bookmark, Facebook, Instagram, Linkedin, Youtube, Video, Palette, Camera, Star, Rocket, Briefcase, Trophy, Lightbulb } from 'lucide-react';
 import { Terminal } from './terminal';
 import { BentoGrid, BentoGridItem } from '@/components/ui/bento-grid';
 import { ContainerTextFlip } from "@/components/ui/container-text-flip";
@@ -31,26 +31,6 @@ export default function HomePage() {
               </p>
               <div className="mt-8 sm:max-w-lg sm:mx-auto sm:text-center lg:text-left lg:mx-0">
                 <div className="flex flex-wrap items-center gap-3">
-                  <a href="/bir-gorusme-planla">
-                    <Button
-                      size="lg"
-                      className="text-lg rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white border-0"
-                    >
-                      Ücretsiz demo görüşmesi ayarla
-                      <ArrowRight className="ml-2 h-5 w-5" />
-                    </Button>
-                  </a>
-
-                  <a href="/havadurumu" target="_blank" rel="noreferrer">
-                    <Button
-                      size="lg"
-                      variant="outline"
-                      className="text-lg rounded-full bg-white/80 hover:bg-white"
-                    >
-                      Hava durumu videosunu aç
-                      <Clapperboard className="ml-2 h-5 w-5" />
-                    </Button>
-                  </a>
                 </div>
                 <p className="mt-3 text-xs text-gray-500 sm:mt-5 sm:text-xl lg:text-lg xl:text-m">
                   Desteklenen sosyal medya platformları
@@ -400,17 +380,6 @@ export default function HomePage() {
                     <p className="mt-2 py-1 text-base text-gray-500">
                       Ekibimizden biriyle 20 dakikalık bir görüşme ayarlayın ve tüm sorularınıza yanıt alın.
                     </p>
-                    <div className="w-full mt-4">
-                      <a href="/bir-gorusme-planla">
-                        <Button
-                          size="lg"
-                          className="text-lg rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white border-0"
-                        >
-                          Bir görüşme planlayın
-                          <ArrowRight className="ml-2 h-5 w-5" />
-                        </Button>
-                      </a>
-                    </div>
                   </div>
                 </div>
               </div>

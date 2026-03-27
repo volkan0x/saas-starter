@@ -62,12 +62,6 @@ function Navbar({ className }: { className?: string }) {
             <HoveredLink href="/enterprise">Enterprise</HoveredLink>
           </div>
         </MenuItem> */}
-        <a
-          href="/bir-gorusme-planla"
-          className="ml-2 inline-flex items-center justify-center rounded-full border border-blue-600/20 bg-gradient-to-r from-blue-600 to-cyan-500 px-4 py-2 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:from-blue-700 hover:to-cyan-600 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500/40 dark:border-white/20 dark:from-blue-500 dark:to-cyan-400 dark:hover:from-blue-600 dark:hover:to-cyan-500"
-        >
-          Görüşme Ayarla
-        </a>
       </Menu>
     </div>
   );
