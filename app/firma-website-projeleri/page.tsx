@@ -26,7 +26,7 @@ export default function FirmaWebsiteProjeleriPage() {
         </div>
       </div>
       <NavbarDemo />
-      <section className="bg-gray-900 pb-12">
+      <section className="bg-gray-800 pb-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           {/* <h2 className="text-2xl sm:text-3xl font-semibold text-white">
             Öne Çıkan Videolar

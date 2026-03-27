@@ -2,10 +2,8 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight, CreditCard, Database, Zap, Shield, Code2, Gauge, Sparkles, Users, Heart, MessageCircle, Send, Bookmark, Facebook, Instagram, Linkedin, Youtube, Video, Palette, Camera, Star, Rocket, Briefcase, Trophy, Lightbulb, Clapperboard } from 'lucide-react';
 import { Terminal } from './terminal';
 import { BentoGrid, BentoGridItem } from '@/components/ui/bento-grid';
-import { Cover } from "@/components/ui/cover";
 import { ContainerTextFlip } from "@/components/ui/container-text-flip";
 import { DottedGlowBackground } from '@/components/ui/dotted-glow-background';
-import { DropdownButton } from "@/components/ui/dropdown";
 import NavbarDemo from '@/components/navbar-menu-demo';
 import PhotosGallerySection from "@/components/photos-gallery/PhotosGallerySection";
 import { websiteProjectsGalleryPhotos } from "@/lib/website-projects-gallery";
@@ -24,7 +22,7 @@ export default function HomePage() {
         5+ yıl deneyim ile uzman<br />
         <ContainerTextFlip words={["sosyal medya", "video reklamları", "grafik tasarım", "dijital pazarlama"]} interval={3000} />
         <br />
-        hizmeti, ayda sadece <span className="relative inline-block"><Cover>999₺</Cover><span className="absolute left-0 right-0 bottom-0 h-0.5 bg-gradient-to-r from-orange-500 via-yellow-500 to-orange-500"></span></span>'den başlayan fiyatlarla.
+        hizmeti, markanıza özel paketlerle.
       </h1>
               <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
                 ✨ Markanızla uyumlu birinci sınıf içerik.<br />
@@ -197,7 +195,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-gray-900 pb-12">
+      <section className="bg-gray-800 pb-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <h2 className="text-2xl sm:text-3xl font-semibold text-white">Website Projeleri</h2>
           <p className="mt-2 text-sm sm:text-base text-gray-300">
@@ -208,7 +206,7 @@ export default function HomePage() {
       </section>
 
       <PhotosGallerySection
-        className="pt-0 pb-8"
+        className="py-12"
         title="Video ve Sosyal Medya İçerikleri"
         description="Web ve mobil projelerimizden seçili örnekleri aşağıda filtreleyerek inceleyebilirsin."
         photos={websiteProjectsGalleryPhotos}
@@ -294,16 +292,7 @@ export default function HomePage() {
                 <p className="mt-2 py-1 text-base text-gray-500">
                   Aylık olarak kanallarınıza oluşturulan ve yayınlanan statik, tek görsel içeren sosyal medya içerikleri.
                 </p>
-                <h2 className="text-2xl py-4 font-bold text-gray-900">
-                  999₺/ay
-                </h2>
-                <div className="w-full mt-auto">
-                  <DropdownButton items={[
-                    { id: '10', label: '5 post / 1.999₺/ay' },
-                    { id: '15', label: '7 post / 2.499₺/ay' },
-                    { id: '20', label: '10 post / 4.999₺/ay' },
-                  ]} />
-                </div>
+                <div className="py-4" />
               </div>
             </div>
             <div className="flex flex-col h-full">
@@ -317,16 +306,7 @@ export default function HomePage() {
                 <p className="mt-2 py-1 text-base text-gray-500">
                   Sıralamalarınızı iyileştirmek ve organik trafiğinizi artırmak için yönetilen SEO hizmeti sunuyoruz. Strateji, içerik, geri bağlantılar ve teknik düzeltmeleri biz üstleniyoruz.
                 </p>
-                <h2 className="text-2xl py-4 font-bold text-gray-900">
-                  1.499₺/ay
-                </h2>
-                <div className="w-full mt-auto">
-                  <DropdownButton items={[
-                    { id: 'basic', label: 'Temel SEO / 1.499₺/ay' },
-                    { id: 'standard', label: 'Standart SEO / 2.499₺/ay' },
-                    { id: 'premium', label: 'Premium SEO / 3.999₺/ay' }
-                  ]} />
-                </div>
+                <div className="py-4" />
               </div>
             </div>
             <div className="flex flex-col h-full">
@@ -340,17 +320,7 @@ export default function HomePage() {
                 <p className="mt-2 py-1 text-base text-gray-500">
                   Aylık olarak kanallarınıza oluşturulan ve yayınlanan kısa video içerikler.
                 </p>
-                <h2 className="text-2xl py-4 font-bold text-gray-900">
-                  1.999₺/ay
-                </h2>
-                <div className="w-full mt-auto">
-                  <DropdownButton items={[
-                    { id: '5', label: '3 video / 1.999₺/ay' },
-                    { id: '10', label: '5 video / 3.499₺/ay' },
-                    { id: '15', label: '7 video / 4.999₺/ay' },
-                    { id: '20', label: '10 video / 6.499₺/ay' }
-                  ]} />
-                </div>
+                <div className="py-4" />
               </div>
             </div>
             <div className="flex flex-col h-full">
@@ -365,16 +335,7 @@ export default function HomePage() {
                   Sosyal medya için yüksek performanslı video reklamlar.
                   Araştırma, senaryo yazımı, kurgu, metin yazarlığı. Müşteriye ait görüntüler, stok içerik ve kullanıcı tarafından oluşturulan içerik (UGC) tarzı kullanılıyor.
                 </p>
-                <h2 className="text-2xl py-4 font-bold text-gray-900">
-                  999₺/ay
-                </h2>
-                <div className="w-full mt-auto">
-                  <DropdownButton items={[
-                    { id: '5', label: '2 video reklam / 999₺/ay' },
-                    { id: '10', label: '4 video reklam / 3.499₺/ay' },
-                    { id: '15', label: '6 video reklam / 4.999₺/ay' },
-                  ]} />
-                </div>
+                <div className="py-4" />
               </div>
             </div>
             <div className="flex flex-col h-full">
@@ -389,16 +350,7 @@ export default function HomePage() {
                   Sosyal medya için yüksek performanslı video reklamlar.
                   Araştırma, senaryo yazımı, kurgu, metin yazarlığı. Müşteriye ait görüntüler, stok içerik ve kullanıcı tarafından oluşturulan içerik (UGC) tarzı kullanılıyor.
                 </p>
-                <h2 className="text-2xl py-4 font-bold text-gray-900">
-                  999₺/ay
-                </h2>
-                <div className="w-full mt-auto">
-                  <DropdownButton items={[
-                    { id: '5', label: '4 grafik reklam / 999₺/ay' },
-                    { id: '10', label: '7 grafik reklam / 3.499₺/ay' },
-                    { id: '15', label: '10 grafik reklam / 4.999₺/ay' },
-                  ]} />
-                </div>
+                <div className="py-4" />
               </div>
             </div>
             <div className="flex flex-col h-full">
@@ -412,16 +364,7 @@ export default function HomePage() {
                 <p className="mt-2 py-1 text-base text-gray-500">
                   Aylık olarak kanallarınıza oluşturulan ve yayınlanan UGC (User Generated Content) video içerikler.
                 </p>
-                <h2 className="text-2xl py-4 font-bold text-gray-900">
-                  2.499₺/ay
-                </h2>
-                <div className="w-full mt-auto">
-                  <DropdownButton items={[
-                    { id: '3', label: '2 UGC video / 2.499₺/ay' },
-                    { id: '5', label: '3 UGC video / 3.999₺/ay' },
-                    { id: '8', label: '5 UGC video / 5.999₺/ay' },
-                  ]} />
-                </div>
+                <div className="py-4" />
               </div>
             </div>
           </div>
