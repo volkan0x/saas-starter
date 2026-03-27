@@ -67,6 +67,12 @@
   flex-direction: column;
 }
 
+.modalSmall {
+  width: min(560px, 96vw);
+  height: auto;
+  max-height: 86vh;
+}
+
 .modalHeader {
   display: flex;
   align-items: center;
@@ -187,6 +193,56 @@
   flex: 1;
   display: flex;
   min-height: 0;
+}
+
+.modalBodyLink {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.modalDescription {
+  color: rgba(0, 0, 0, 0.72);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.modalLinkRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.modalButton {
+  appearance: none;
+  border: 1px solid rgba(0, 0, 0, 0.14);
+  background: rgba(0, 0, 0, 0.92);
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.modalButton:hover {
+  background: rgba(0, 0, 0, 0.86);
+}
+
+.modalButtonSecondary {
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 14px;
+  text-decoration: none;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 0, 0, 0.14);
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.modalButtonSecondary:hover {
+  background: rgba(0, 0, 0, 0.07);
 }
 
 @media (max-width: 640px) {
