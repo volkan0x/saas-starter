@@ -11,6 +11,10 @@ import Slider from "@/components/slider/Slider";
 
 
 export default function HomePage() {
+  const mobileGalleryVideos = websiteProjectsGalleryPhotos.filter(
+    (item) => item.mediaType === "video" || item.src.endsWith(".mp4") || item.src.endsWith(".webm"),
+  );
+
   return (
     <main className="bg-gray-100">
       <NavbarDemo />
@@ -73,14 +77,19 @@ export default function HomePage() {
                   profileIcon={<Video className="w-5 h-5" />}
                   whiteProfileIcon={true}
                   header={
-                    <div className="relative h-full w-full overflow-hidden rounded-lg">
+                    <div
+                      className="relative w-full overflow-hidden rounded-lg bg-black"
+                      style={{ aspectRatio: "16 / 9" }}
+                    >
                       <video 
                         autoPlay 
                         loop 
                         muted 
                         playsInline
+                        preload="metadata"
                         className="absolute inset-0 h-full w-full object-cover"
                       >
+                        <source src="/influencer_video.mp4" type="video/mp4" />
                         <source src="/influencer_video.webm" type="video/webm" />
                       </video>
                       {/* Action buttons */}
@@ -115,7 +124,7 @@ export default function HomePage() {
                           playsInline
                           className="h-full w-full object-cover"
                         >
-                          <source src="/video1feedbird_first13sec.mp4" type="video/webm" />
+                            <source src="/video1feedbird_first13sec.mp4" type="video/mp4" />
                         </video>
                         
                         {/* Action buttons */}
@@ -185,13 +194,70 @@ export default function HomePage() {
         <Slider />
       </section>
 
-      <PhotosGallerySection
-        className="py-12"
-        title="Video ve Sosyal Medya İçerikleri"
-        description="Web ve mobil projelerimizden seçili örnekleri aşağıda filtreleyerek inceleyebilirsin."
-        photos={websiteProjectsGalleryPhotos}
-        layout="instagram"
-      />
+      {/* Mobile: show videos one-by-one (stacked) */}
+      <section className="py-12 md:hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl sm:text-3xl font-semibold text-gray-900">
+            Video ve Sosyal Medya İçerikleri
+          </h2>
+          <p className="mt-2 text-sm sm:text-base text-gray-600">
+            Web ve mobil projelerimizden seçili video örnekleri.
+          </p>
+
+          <div className="mt-6 space-y-6">
+            {mobileGalleryVideos.map((item) => {
+              const mp4Src = item.src.endsWith(".webm")
+                ? item.src.replace(/\.webm$/i, ".mp4")
+                : item.src;
+              const webmSrc = item.src.endsWith(".webm") ? item.src : null;
+              const title = item.title ?? "Video";
+
+              return (
+                <article
+                  key={`${item.src}-${item.title ?? ""}`}
+                  className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm"
+                >
+                  <div className="p-4">
+                    <div className="text-sm font-semibold text-gray-900">
+                      {title}
+                    </div>
+                    {item.description && (
+                      <div className="mt-1 text-sm text-gray-600">
+                        {item.description}
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="bg-black">
+                    <video
+                      className="w-full h-auto"
+                      controls
+                      playsInline
+                      preload="metadata"
+                      muted
+                    >
+                      <source src={mp4Src} type="video/mp4" />
+                      {webmSrc && <source src={webmSrc} type="video/webm" />}
+                      Tarayıcınız video etiketini desteklemiyor.
+                    </video>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Desktop/Tablet: keep the interactive gallery */}
+      <div className="hidden md:block">
+        <PhotosGallerySection
+          className="py-12"
+          title="Video ve Sosyal Medya İçerikleri"
+          description="Web ve mobil projelerimizden seçili örnekleri aşağıda filtreleyerek inceleyebilirsin."
+          photos={websiteProjectsGalleryPhotos}
+          layout="instagram"
+        />
+      </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-16">
         <div className="border-t-2 border-gray-300"></div>

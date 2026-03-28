@@ -17,41 +17,10 @@ export default function Slider() {
   const activeVideo = activeVideoIndex !== null ? videos[activeVideoIndex] : null;
   const modalUrl = activeVideo?.siteUrl ?? null;
 
-  const isModalOpen = activeVideo !== null;
+  const isModalOpen = modalUrl !== null;
 
   const openSiteModalByIndex = (index: number) => setActiveVideoIndex(index);
   const closeSiteModal = () => setActiveVideoIndex(null);
-
-  const tryOpenPopup = (url: string, name: string) => {
-    const width = 520;
-    const height = 760;
-    const left = Math.max(0, Math.round(window.screenX + (window.outerWidth - width) / 2));
-    const top = Math.max(0, Math.round(window.screenY + (window.outerHeight - height) / 2));
-
-    const features = [
-      "popup=yes",
-      `width=${width}`,
-      `height=${height}`,
-      `left=${left}`,
-      `top=${top}`,
-      "scrollbars=yes",
-      "resizable=yes",
-      "noopener=yes",
-      "noreferrer=yes",
-    ].join(",");
-
-    const popup = window.open(url, name, features);
-    if (!popup) return false;
-
-    try {
-      popup.opener = null;
-      popup.focus();
-    } catch {
-      // ignore
-    }
-
-    return true;
-  };
 
   const goToAdjacent = (direction: -1 | 1) => {
     if (openInModalIndices.length === 0) return;
@@ -68,9 +37,33 @@ export default function Slider() {
     if (!video?.siteUrl) return;
 
     if (video.openInNewTab) {
-      // Prefer a small popup window; if blocked, open a small modal with a direct link.
-      const opened = tryOpenPopup(video.siteUrl, `ajans99:${video.id}`);
-      if (opened) return;
+      // Prefer a small popup window; fall back to modal if blocked.
+      const width = 520;
+      const height = 760;
+      const left = Math.max(0, Math.round(window.screenX + (window.outerWidth - width) / 2));
+      const top = Math.max(0, Math.round(window.screenY + (window.outerHeight - height) / 2));
+
+      const features = [
+        "popup=yes",
+        `width=${width}`,
+        `height=${height}`,
+        `left=${left}`,
+        `top=${top}`,
+        "noopener=yes",
+        "noreferrer=yes",
+      ].join(",");
+
+      const popup = window.open(video.siteUrl, "_blank", features);
+      if (popup) {
+        try {
+          popup.opener = null;
+          popup.focus();
+        } catch {
+          // ignore
+        }
+        return;
+      }
+
       openSiteModalByIndex(index);
       return;
     }
@@ -116,8 +109,8 @@ export default function Slider() {
                 className={styles.cardLinkOverlay}
                 aria-label={
                   video.openInNewTab
-                    ? `Küçük pencerede aç: ${video.siteUrl}`
-                    : `Modalda aç: ${video.siteUrl}`
+                    ? `Yeni küçük pencerede aç: ${video.siteUrl}`
+                    : `Küçük pencerede aç: ${video.siteUrl}`
                 }
               />
             )}
@@ -157,10 +150,10 @@ export default function Slider() {
         ))}
       </div>
 
-      {isModalOpen && modalUrl && (
+      {isModalOpen && (
         <div className={styles.modalBackdrop} onClick={closeSiteModal} role="dialog" aria-modal="true">
           <div
-            className={`${styles.modal} ${activeVideo?.openInNewTab ? styles.modalSmall : ""}`}
+            className={styles.modal}
             onClick={(e) => e.stopPropagation()}
             onTouchStart={(e) => {
               const touch = e.touches[0];
@@ -200,66 +193,35 @@ export default function Slider() {
               </div>
             </div>
 
-            {activeVideo?.openInNewTab ? (
-              <div className={styles.modalBodyLink}>
-                <p className={styles.modalDescription}>
-                  Bu sayfa bazı tarayıcılarda iframe içinde görüntülenmeyebilir. Pop-up engellendiyse aşağıdaki butonla küçük
-                  pencereyi tekrar açabilir veya yeni sekmede devam edebilirsin.
-                </p>
+            <div className={styles.modalBody}>
+              <button
+                type="button"
+                onClick={() => goToAdjacent(-1)}
+                className={`${styles.modalNavSide} ${styles.modalNavLeft}`}
+                aria-label="Önceki site"
+                disabled={openInModalIndices.length <= 1}
+              >
+                ‹
+              </button>
 
-                <div className={styles.modalLinkRow}>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      if (!modalUrl) return;
-                      const opened = tryOpenPopup(modalUrl, `ajans99:${activeVideo.id}`);
-                      if (opened) closeSiteModal();
-                    }}
-                    className={styles.modalButton}
-                  >
-                    Küçük pencere aç
-                  </button>
-                  <a
-                    href={modalUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.modalButtonSecondary}
-                  >
-                    Yeni sekmede aç
-                  </a>
-                </div>
-              </div>
-            ) : (
-              <div className={styles.modalBody}>
-                <button
-                  type="button"
-                  onClick={() => goToAdjacent(-1)}
-                  className={`${styles.modalNavSide} ${styles.modalNavLeft}`}
-                  aria-label="Önceki site"
-                  disabled={openInModalIndices.length <= 1}
-                >
-                  ‹
-                </button>
+              <button
+                type="button"
+                onClick={() => goToAdjacent(1)}
+                className={`${styles.modalNavSide} ${styles.modalNavRight}`}
+                aria-label="Sonraki site"
+                disabled={openInModalIndices.length <= 1}
+              >
+                ›
+              </button>
 
-                <button
-                  type="button"
-                  onClick={() => goToAdjacent(1)}
-                  className={`${styles.modalNavSide} ${styles.modalNavRight}`}
-                  aria-label="Sonraki site"
-                  disabled={openInModalIndices.length <= 1}
-                >
-                  ›
-                </button>
-
-                <iframe
-                  src={modalUrl ?? "about:blank"}
-                  className={styles.modalIframe}
-                  title={modalHost || "Site"}
-                  loading="lazy"
-                  referrerPolicy="no-referrer"
-                />
-              </div>
-            )}
+              <iframe
+                src={modalUrl ?? "about:blank"}
+                className={styles.modalIframe}
+                title={modalHost || "Site"}
+                loading="lazy"
+                referrerPolicy="no-referrer"
+              />
+            </div>
           </div>
         </div>
       )}
