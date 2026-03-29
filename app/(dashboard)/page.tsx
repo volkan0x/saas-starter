@@ -8,13 +8,10 @@ import NavbarDemo from '@/components/navbar-menu-demo';
 import PhotosGallerySection from "@/components/photos-gallery/PhotosGallerySection";
 import { websiteProjectsGalleryPhotos } from "@/lib/website-projects-gallery";
 import Slider from "@/components/slider/Slider";
+import MobileVideoFeed from "@/components/mobile-video-feed/MobileVideoFeed";
 
 
 export default function HomePage() {
-  const mobileGalleryVideos = websiteProjectsGalleryPhotos.filter(
-    (item) => item.mediaType === "video" || item.src.endsWith(".mp4") || item.src.endsWith(".webm"),
-  );
-
   return (
     <main className="bg-gray-100">
       <NavbarDemo />
@@ -194,59 +191,13 @@ export default function HomePage() {
         <Slider />
       </section>
 
-      {/* Mobile: show videos one-by-one (stacked) */}
-      <section className="py-12 md:hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl sm:text-3xl font-semibold text-gray-900">
-            Video ve Sosyal Medya İçerikleri
-          </h2>
-          <p className="mt-2 text-sm sm:text-base text-gray-600">
-            Web ve mobil projelerimizden seçili video örnekleri.
-          </p>
-
-          <div className="mt-6 space-y-6">
-            {mobileGalleryVideos.map((item) => {
-              const mp4Src = item.src.endsWith(".webm")
-                ? item.src.replace(/\.webm$/i, ".mp4")
-                : item.src;
-              const webmSrc = item.src.endsWith(".webm") ? item.src : null;
-              const title = item.title ?? "Video";
-
-              return (
-                <article
-                  key={`${item.src}-${item.title ?? ""}`}
-                  className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm"
-                >
-                  <div className="p-4">
-                    <div className="text-sm font-semibold text-gray-900">
-                      {title}
-                    </div>
-                    {item.description && (
-                      <div className="mt-1 text-sm text-gray-600">
-                        {item.description}
-                      </div>
-                    )}
-                  </div>
-
-                  <div className="bg-black">
-                    <video
-                      className="w-full h-auto"
-                      controls
-                      playsInline
-                      preload="metadata"
-                      muted
-                    >
-                      <source src={mp4Src} type="video/mp4" />
-                      {webmSrc && <source src={webmSrc} type="video/webm" />}
-                      Tarayıcınız video etiketini desteklemiyor.
-                    </video>
-                  </div>
-                </article>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+      {/* Mobile: Instagram-like vertical feed */}
+      <div className="md:hidden">
+        <MobileVideoFeed
+          items={websiteProjectsGalleryPhotos}
+          description="İlk açılışta videolar kapalıdır. Aşağı sürükledikçe otomatik oynar."
+        />
+      </div>
 
       {/* Desktop/Tablet: keep the interactive gallery */}
       <div className="hidden md:block">
