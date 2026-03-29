@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button';
-import { CreditCard, Database, Zap, Shield, Code2, Gauge, Sparkles, Users, Heart, MessageCircle, Send, Bookmark, Facebook, Instagram, Linkedin, Youtube, Video, Palette, Camera, Star, Rocket, Briefcase, Trophy, Lightbulb } from 'lucide-react';
+import { CreditCard, Database, Zap, Shield, Code2, Gauge, Sparkles, Users, Heart, MessageCircle, Send, Bookmark, Facebook, Instagram, Linkedin, Youtube, Video, Palette, Camera, Star, Rocket, Briefcase, Trophy, Lightbulb, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Terminal } from './terminal';
 import { BentoGrid, BentoGridItem } from '@/components/ui/bento-grid';
 import { ContainerTextFlip } from "@/components/ui/container-text-flip";
@@ -9,6 +9,7 @@ import PhotosGallerySection from "@/components/photos-gallery/PhotosGallerySecti
 import { websiteProjectsGalleryPhotos } from "@/lib/website-projects-gallery";
 import Slider from "@/components/slider/Slider";
 import MobileVideoFeed from "@/components/mobile-video-feed/MobileVideoFeed";
+import GraphicDesignCarousel from "@/components/graphic-design-carousel/GraphicDesignCarousel";
 
 
 export default function HomePage() {
@@ -19,7 +20,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="lg:grid lg:grid-cols-12 lg:gap-8">
             <div className="text-left md:max-w-2xl lg:col-span-6">
-                <h1 className="text-2xl md:text-2xl lg:text-4xl font-semibold max-w-7xl text-left mt-6 relative z-20 py-6 bg-clip-text text-transparent bg-gradient-to-b from-neutral-800 via-neutral-700 to-neutral-700 dark:from-neutral-800 dark:via-white dark:to-white">
+                <h1 className="text-3xl md:text-3xl lg:text-4xl font-semibold max-w-7xl text-left mt-6 relative z-20 py-6 bg-clip-text text-transparent bg-gradient-to-b from-neutral-800 via-neutral-700 to-neutral-700 dark:from-neutral-800 dark:via-white dark:to-white">
         5+ yıl deneyim ile uzman<br />
         <ContainerTextFlip words={["sosyal medya", "video reklamları", "grafik tasarım", "dijital pazarlama"]} interval={3000} />
         <br />
@@ -148,26 +149,8 @@ export default function HomePage() {
                   profileIcon={<Palette className="w-5 h-5" />}
                   whiteProfileIcon={true}
                   header={
-                    <div className="flex h-full w-full items-center justify-center rounded-lg overflow-hidden">
-                      <div className="relative overflow-hidden rounded-lg">
-                        <img 
-                          src="/TRr.png" 
-                          alt="Beautiful UI Components" 
-                          className="h-full w-full object-contain"
-                        />
-                        {/* Action buttons */}
-                        <div className="absolute bottom-0 right-0 left-0 flex gap-3 items-center justify-end p-4 bg-gradient-to-t from-black/30 to-transparent">
-                          <button className="text-white hover:scale-110 transition-transform drop-shadow-lg">
-                            <Heart className="w-6 h-6" />
-                          </button>
-                          <button className="text-white hover:scale-110 transition-transform drop-shadow-lg">
-                            <MessageCircle className="w-6 h-6" />
-                          </button>
-                          <button className="text-white hover:scale-110 transition-transform drop-shadow-lg">
-                            <Bookmark className="w-6 h-6" />
-                          </button>
-                        </div>
-                      </div>
+                    <div className="flex h-full w-full items-center justify-center rounded-lg overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100">
+                      <GraphicDesignCarousel />
                     </div>
                   }
                   className="md:col-span-2 md:row-span-2"
@@ -180,7 +163,7 @@ export default function HomePage() {
 
       <section className="bg-gray-800 pb-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <h2 className="text-2xl sm:text-3xl font-semibold text-white">Website Projeleri</h2>
+          <h2 className="text-3xl sm:text-3xl font-semibold text-white">Website Projeleri</h2>
           <p className="mt-2 text-sm sm:text-base text-gray-300">
             Kartlara tıklayarak projeleri yeni pencerede veya modalda inceleyebilirsin.
           </p>

@@ -123,7 +123,7 @@ export default function MobileVideoFeed({
                 )}
               >
                 <div className="p-4">
-                  <div className="text-sm font-semibold text-gray-900">{item.title ?? "Video"}</div>
+                  <div className="text-base font-semibold text-gray-900">{item.title ?? "Video"}</div>
                   {item.description && <div className="mt-1 text-sm text-gray-600">{item.description}</div>}
                 </div>
 

@@ -260,24 +260,12 @@ export default function PhotosGallerySection({
           <p className="max-w-2xl text-sm text-neutral-600">{description}</p>
         </div>
 
-        <div className="mt-6 grid grid-cols-1 gap-6 lg:mt-8 lg:grid-cols-[240px_1fr]">
+        <div className="mt-6 lg:mt-8">
           {showFilters && (
-            <aside className="hidden lg:block">
-              <div className="sticky top-24">
-                <div className="rounded-xl border border-neutral-200 bg-white p-3 shadow-sm">
-                  <div className="px-1 pb-2 text-sm font-semibold text-neutral-900">
-                    Filtreler
-                  </div>
-                  <div className="space-y-1">{tags.map(renderSidebarFilterItem)}</div>
-                </div>
-              </div>
-            </aside>
+            <div className="flex flex-wrap gap-2 mb-6">{tags.map(renderFilterChip)}</div>
           )}
 
           <div>
-            {showFilters && (
-              <div className="flex flex-wrap gap-2 lg:hidden">{tags.map(renderFilterChip)}</div>
-            )}
 
             {filtered.length > 0 ? (
               <div
@@ -355,10 +343,10 @@ export default function PhotosGallerySection({
                       )}
                     >
                       {photo.title && (
-                        <div className="text-sm font-semibold text-white">{photo.title}</div>
+                        <div className="text-base font-semibold text-white">{photo.title}</div>
                       )}
                       {photo.description && (
-                        <div className="mt-0.5 line-clamp-2 text-xs text-white/90">
+                        <div className="mt-0.5 line-clamp-2 text-sm text-white/90">
                           {photo.description}
                         </div>
                       )}
