@@ -96,7 +96,7 @@ export default function MobileVideoFeed({
         }
       }
     });
-  }, [activeIndex, hasInteracted]);
+  }, [activeIndex, hasInteracted])
 
   return (
     <section className={cn("py-12", className)}>
@@ -138,12 +138,11 @@ export default function MobileVideoFeed({
                     ref={(el) => {
                       videoRefs.current[index] = el;
                     }}
-                    className="absolute inset-0 h-full w-full object-cover"
+                    className="absolute inset-0 h-full w-full object-contain object-center"
                     playsInline
                     loop
                     muted
                     preload="metadata"
-                    // No autoplay on initial load; we start playback after user interaction.
                     controls={false}
                     onClick={(e) => {
                       const video = e.currentTarget;
