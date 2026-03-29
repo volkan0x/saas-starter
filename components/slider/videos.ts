@@ -11,7 +11,7 @@ export type SliderVideo = {
 export const videos: SliderVideo[] = [
   {
     id: "medusa-frontend.webm",
-    title: "E-ticaret",
+    title: "E-ticaret Mağaza Sayfası",
     category: "E-commerce",
     date: "March 2026",
     src: "/medusa-frontend.webm",
@@ -22,9 +22,8 @@ export const videos: SliderVideo[] = [
     title: "E-ticaret Admin Paneli",
     category: "E-commerce",
     date: "March 2026",
-    src: "/medusa-frontend.webm",
+    src: "/medusa-admin.webm",
     siteUrl: "https://medusajs.com/admin/",
-    openInNewTab: true,
   },
   {
     id: "havadurumu.webm",

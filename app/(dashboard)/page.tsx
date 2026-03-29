@@ -172,9 +172,6 @@ export default function HomePage() {
                   }
                   className="md:col-span-2 md:row-span-2"
                 />
-                
-                
-                
               </BentoGrid>
             </div>
           </div>
