@@ -296,7 +296,7 @@ export default function PhotosGallerySection({
                     >
                   {photo.mediaType === "video" ? (
                     <video
-                      className="h-full w-full object-cover"
+                      className="h-full w-full object-contain bg-black"
                       autoPlay
                       loop
                       muted
