@@ -39,5 +39,12 @@ next-env.d.ts
 # Docker
 postgres_data/
 .env*.local
-public/video/arsa.webm
-public/video/houston.webm
+
+# Media files (stored in Vercel Blob)
+public/*.mp4
+public/*.webm
+public/*.jpg
+public/*.jpeg
+public/*.png
+public/*.gif
+public/video/
