@@ -7,7 +7,16 @@ const nextConfig: NextConfig = {
   },
   turbopack: {
     root: process.cwd()
-  }
+  },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'siqudo1i7q0g1vg6.public.blob.vercel-storage.com',
+        pathname: '/**',
+      },
+    ],
+  },
 };
 
 export default nextConfig;

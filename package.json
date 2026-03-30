@@ -35,6 +35,7 @@
     "@types/react-dom": "19.1.5",
     "@untitledui/icons": "^0.0.19",
     "@untitledui/icons-react": "^0.3.0",
+    "@vercel/blob": "^2.3.2",
     "autoprefixer": "^10.4.21",
     "bcryptjs": "^3.0.2",
     "class-variance-authority": "^0.7.1",

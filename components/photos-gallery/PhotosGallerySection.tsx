@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState, useCallback } from "react";
 import {
   Camera,
   ChevronLeft,
@@ -23,6 +23,95 @@ import {
 } from "lucide-react";
 
 import { cn } from "@/lib/utils";
+
+// LazyVideo component with Intersection Observer
+function LazyGalleryVideo({
+  src,
+  poster,
+  videoRef,
+  unmuted,
+  className,
+}: {
+  src: string;
+  poster?: string;
+  videoRef: (el: HTMLVideoElement | null) => void;
+  unmuted: boolean;
+  className: string;
+}) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const internalVideoRef = useRef<HTMLVideoElement | null>(null);
+  const [isInView, setIsInView] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  // Combined ref handler
+  const setVideoRef = useCallback((el: HTMLVideoElement | null) => {
+    internalVideoRef.current = el;
+    videoRef(el);
+  }, [videoRef]);
+
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          setIsInView(entry.isIntersecting);
+        });
+      },
+      { rootMargin: "100px", threshold: 0.1 }
+    );
+
+    observer.observe(container);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const video = internalVideoRef.current;
+    if (!video) return;
+
+    if (isInView && !isLoaded) {
+      video.load();
+      setIsLoaded(true);
+    }
+  }, [isInView, isLoaded]);
+
+  useEffect(() => {
+    const video = internalVideoRef.current;
+    if (!video || !isLoaded) return;
+
+    if (isInView) {
+      video.play().catch(() => {});
+    } else {
+      video.pause();
+    }
+  }, [isInView, isLoaded]);
+
+  return (
+    <div ref={containerRef} className="relative h-full w-full">
+      {!isLoaded && (
+        <div className="absolute inset-0 flex items-center justify-center bg-gray-900">
+          {poster ? (
+            <Image src={poster} alt="" fill className="object-cover" />
+          ) : (
+            <div className="h-6 w-6 animate-spin rounded-full border-2 border-white border-t-transparent" />
+          )}
+        </div>
+      )}
+      <video
+        ref={setVideoRef}
+        className={className}
+        loop
+        muted={!unmuted}
+        playsInline
+        preload="none"
+        poster={poster}
+      >
+        {isInView && <source src={src} />}
+      </video>
+    </div>
+  );
+}
 
 export type GalleryPhoto = {
   src: string;
@@ -328,21 +417,16 @@ export default function PhotosGallerySection({
                     >
                   {photo.mediaType === "video" ? (
                     <>
-                    <video
-                      ref={(el) => {
+                    <LazyGalleryVideo
+                      src={photo.src}
+                      poster={photo.poster}
+                      videoRef={(el) => {
                         if (el) gridVideoRefs.current.set(index, el);
                         else gridVideoRefs.current.delete(index);
                       }}
+                      unmuted={unmutedVideoIndex === index}
                       className="h-full w-full object-contain bg-black"
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                      preload="metadata"
-                      poster={photo.poster}
-                    >
-                      <source src={photo.src} />
-                    </video>
+                    />
                     {/* Sound indicator */}
                     <div className="pointer-events-none absolute right-2 top-2 inline-flex items-center gap-1 rounded-full bg-black/50 px-2 py-1 text-xs text-white backdrop-blur">
                       {unmutedVideoIndex === index ? (
@@ -359,6 +443,7 @@ export default function PhotosGallerySection({
                       fill
                       sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw"
                       className="object-cover transition duration-300 group-hover:scale-[1.03]"
+                      loading="lazy"
                     />
                   )}
                   {layout === "instagram" && (

@@ -1,9 +1,83 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useCallback } from "react";
 import Image from "next/image";
 import styles from "./slider.module.css";
 import { videos } from "./videos";
+
+// LazyVideo component for viewport-based loading
+function LazySliderVideo({ 
+  src, 
+  title, 
+  className 
+}: { 
+  src: string; 
+  title: string; 
+  className: string;
+}) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [isInView, setIsInView] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          setIsInView(entry.isIntersecting);
+        });
+      },
+      { rootMargin: "100px", threshold: 0.1 }
+    );
+
+    observer.observe(container);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    if (isInView && !isLoaded) {
+      video.load();
+      setIsLoaded(true);
+    }
+  }, [isInView, isLoaded]);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video || !isLoaded) return;
+
+    if (isInView) {
+      video.play().catch(() => {});
+    } else {
+      video.pause();
+    }
+  }, [isInView, isLoaded]);
+
+  return (
+    <div ref={containerRef} className="relative w-full h-full">
+      {!isLoaded && (
+        <div className="absolute inset-0 flex items-center justify-center bg-gray-900">
+          <div className="h-6 w-6 animate-spin rounded-full border-2 border-white border-t-transparent" />
+        </div>
+      )}
+      <video
+        ref={videoRef}
+        className={className}
+        muted
+        loop
+        playsInline
+        preload="none"
+      >
+        {isInView && <source src={src} type="video/webm" />}
+      </video>
+    </div>
+  );
+}
 
 export default function Slider() {
   const gridRef = useRef<HTMLDivElement | null>(null);
@@ -118,17 +192,15 @@ export default function Slider() {
                         src={video.src}
                         alt={video.title}
                         className={styles.mediaImageScroll}
+                        loading="lazy"
                       />
                     </div>
                   ) : (
-                  <video
-                    src={video.src}
-                    className={`${styles.mediaEl} ${styles.mediaVideo}`}
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                  />
+                    <LazySliderVideo
+                      src={video.src}
+                      title={video.title}
+                      className={`${styles.mediaEl} ${styles.mediaVideo}`}
+                    />
                   )
                 ) : (
                   <iframe
@@ -136,6 +208,7 @@ export default function Slider() {
                     allow="autoplay; fullscreen; picture-in-picture"
                     className={styles.mediaEl}
                     title={video.title}
+                    loading="lazy"
                   />
                 ))}
 

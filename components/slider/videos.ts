@@ -1,3 +1,5 @@
+import mediaUrls from "@/lib/media-urls";
+
 export type SliderVideo = {
   id: string;
   title: string;
@@ -14,7 +16,7 @@ export const videos: SliderVideo[] = [
     title: "E-ticaret Mağaza Sayfası",
     category: "E-commerce",
     date: "March 2026",
-    src: "/medusa-frontend.webm",
+    src: mediaUrls.medusaFrontend,
     siteUrl: "https://storefront-production-f35a.up.railway.app/dk/store",
   },
   {
@@ -22,7 +24,7 @@ export const videos: SliderVideo[] = [
     title: "E-ticaret Admin Paneli",
     category: "E-commerce",
     date: "March 2026",
-    src: "/medusa-admin.webm",
+    src: mediaUrls.medusaAdmin,
     siteUrl: "https://medusajs.com/admin/",
   },
   {
@@ -30,7 +32,7 @@ export const videos: SliderVideo[] = [
     title: "Hava Durumu",
     category: "Weather",
     date: "March 2026",
-    src: "/havadurumu.webm",
+    src: mediaUrls.havadurumu,
     siteUrl: "https://havadurumu-fawn.vercel.app/",
   },
   {
@@ -38,7 +40,7 @@ export const videos: SliderVideo[] = [
     title: "Bursa Günlük Kiralık Daireler",
     category: "Nature",
     date: "July 2022",
-    src: "/bursa-gunluk-kiralik.webm",
+    src: mediaUrls.bursaGunlukKiralik,
     siteUrl: "https://bursagunlukkiralikdaireler.com/",
   },
   {
@@ -46,15 +48,15 @@ export const videos: SliderVideo[] = [
     title: "Flora Garden Hotel",
     category: "Hotel",
     date: "March 2026",
-    src: "/FloraLanding.jpg",
-    siteUrl: "/FloraLanding.jpg",
+    src: mediaUrls.floraLanding,
+    siteUrl: mediaUrls.floraLanding,
   },
   {
     id: "uzmantasimaci.webm",
     title: "Uzman Nakliyat",
     category: "Nature",
     date: "March 2026",
-    src: "/uzmantasimaci.webm",
+    src: mediaUrls.uzmantasimaci,
     siteUrl: "https://uzmantasimaci.com/",
   },
   {
@@ -62,7 +64,7 @@ export const videos: SliderVideo[] = [
     title: "Benti Textile",
     category: "Nature",
     date: "August 2022",
-    src: "/benti-textile.webm",
+    src: mediaUrls.bentiTextile,
     siteUrl: "https://bentitextile.com/",
   },
 ];

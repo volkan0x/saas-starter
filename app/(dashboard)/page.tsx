@@ -121,6 +121,7 @@ export default function HomePage() {
                           loop 
                           muted 
                           playsInline
+                          preload="metadata"
                           className="h-full w-full object-cover"
                         >
                             <source src={mediaUrls.video1feedbird} type="video/mp4" />

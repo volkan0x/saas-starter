@@ -2,11 +2,12 @@
 
 import { useState, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import mediaUrls from "@/lib/media-urls";
 
 const images = [
-  { src: "/TRr.png", alt: "Grafik Tasarım 1" },
-  { src: "/Feen5.jpg", alt: "Grafik Tasarım 2" },
-  { src: "/Feen8.jpg", alt: "Grafik Tasarım 3" },
+  { src: mediaUrls.trr, alt: "Grafik Tasarım 1" },
+  { src: mediaUrls.feen5, alt: "Grafik Tasarım 2" },
+  { src: mediaUrls.feen8, alt: "Grafik Tasarım 3" },
 ];
 
 export default function GraphicDesignCarousel() {
