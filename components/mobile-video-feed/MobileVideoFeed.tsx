@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
+import { Volume2, VolumeX } from "lucide-react";
 
 import type { GalleryPhoto } from "@/components/photos-gallery/PhotosGallerySection";
 import { cn } from "@/lib/utils";
@@ -31,9 +32,31 @@ export default function MobileVideoFeed({
 
   const [hasInteracted, setHasInteracted] = useState(false);
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const [unmutedIndex, setUnmutedIndex] = useState<number | null>(null);
 
   const cardRefs = useRef<Array<HTMLDivElement | null>>([]);
   const videoRefs = useRef<Array<HTMLVideoElement | null>>([]);
+
+  const toggleMute = (index: number) => {
+    const video = videoRefs.current[index];
+    if (!video) return;
+
+    if (unmutedIndex === index) {
+      // Mute this video
+      video.muted = true;
+      setUnmutedIndex(null);
+    } else {
+      // Mute previous video if any
+      if (unmutedIndex !== null) {
+        const prevVideo = videoRefs.current[unmutedIndex];
+        if (prevVideo) prevVideo.muted = true;
+      }
+      // Unmute this video
+      video.muted = false;
+      video.volume = 1;
+      setUnmutedIndex(index);
+    }
+  };
 
   useEffect(() => {
     const markInteracted = () => setHasInteracted(true);
@@ -171,6 +194,23 @@ export default function MobileVideoFeed({
                       </span>
                     </button>
                   )}
+
+                  {/* Ses açma/kapama butonu - her zaman görünür */}
+                  <button
+                    type="button"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      toggleMute(index);
+                    }}
+                    className="absolute bottom-6 right-4 z-10 flex h-14 w-14 items-center justify-center rounded-full bg-white text-black shadow-lg ring-2 ring-white/50 transition-all active:scale-90 hover:bg-gray-100"
+                    aria-label={unmutedIndex === index ? "Sesi kapat" : "Sesi aç"}
+                  >
+                    {unmutedIndex === index ? (
+                      <Volume2 className="h-7 w-7" />
+                    ) : (
+                      <VolumeX className="h-7 w-7" />
+                    )}
+                  </button>
                 </div>
               </article>
             );

@@ -38,6 +38,15 @@ pnpm-debug.log*
 .DS_Store
 Thumbs.db
 
+# Media files (served from Vercel Blob CDN)
+public/*.mp4
+public/*.webm
+public/*.jpg
+public/*.jpeg
+public/*.png
+public/*.gif
+public/video/
+
 # Misc
 *.pem
 *.log
