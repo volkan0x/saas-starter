@@ -1,9 +1,10 @@
 import type { GalleryPhoto } from "@/components/photos-gallery/PhotosGallerySection";
+import mediaUrls from "@/lib/media-urls";
 
 export const websiteProjectsGalleryPhotos: GalleryPhoto[] = [
   
   // {
-  //   src: "/Roots.mp4",
+  //   src: mediaUrls.roots,
   //   alt: "Roots video örneği",
   //   title: "Roots",
   //   description: "Video örneği",
@@ -14,7 +15,7 @@ export const websiteProjectsGalleryPhotos: GalleryPhoto[] = [
   //   profileIcon: "video",
   // },
   {
-    src: "/sosyal-medya-video.webm",
+    src: mediaUrls.sosyalMedyaWebm,
     alt: "Profesyonel sosyal medya yönetimi video örneği",
     title: "Profesyonel Sosyal Medya Yönetimi",
     description: "Kısa video örneği",
@@ -36,7 +37,7 @@ export const websiteProjectsGalleryPhotos: GalleryPhoto[] = [
   //   profileIcon: "camera",
   // },
   {
-    src: "/influencer_video.webm",
+    src: mediaUrls.influencerWebm,
     alt: "Drone tanıtım videosu örneği",
     title: "Drone Tanıtım Videoları",
     description: "Kuș bakıșı tanıtım çekimleri",
@@ -47,7 +48,7 @@ export const websiteProjectsGalleryPhotos: GalleryPhoto[] = [
     profileIcon: "video",
   },
   {
-    src: "/video1feedbird_first13sec.mp4",
+    src: mediaUrls.video1feedbird,
     alt: "Sosyal medya influencer içerik videosu",
     title: "Sosyal Medya İçerikleri",
     description: "Instagram & TikTok Reels",
@@ -58,7 +59,7 @@ export const websiteProjectsGalleryPhotos: GalleryPhoto[] = [
     profileIcon: "sparkles",
   },
   {
-    src: "/video/ticaret.webm",
+    src: mediaUrls.ticaret,
     alt: "E-ticaret ürün tanıtım videosu",
     title: "E-Ticaret Tanıtımı",
     description: "Ürün & mağaza videoları",
@@ -69,7 +70,7 @@ export const websiteProjectsGalleryPhotos: GalleryPhoto[] = [
     profileIcon: "rocket",
   },
   {
-    src: "/video/villa.webm",
+    src: mediaUrls.villa,
     alt: "Lüks villa tanıtım videosu",
     title: "Villa Tanıtımı",
     description: "Lüks gayrimenkul videoları",
@@ -80,7 +81,7 @@ export const websiteProjectsGalleryPhotos: GalleryPhoto[] = [
     profileIcon: "star",
   },
   {
-    src: "/video/konut.webm",
+    src: mediaUrls.konut,
     alt: "Konut projesi tanıtım videosu",
     title: "Konut Projesi Tanıtımı",
     description: "Emlak proje videoları",
@@ -91,7 +92,7 @@ export const websiteProjectsGalleryPhotos: GalleryPhoto[] = [
     profileIcon: "lightbulb",
   },
   {
-    src: "/Burger.mp4",
+    src: mediaUrls.burger,
     alt: "Burger video örneği",
     title: "Burger",
     description: "Video örneği",
@@ -102,7 +103,7 @@ export const websiteProjectsGalleryPhotos: GalleryPhoto[] = [
     profileIcon: "video",
   },
   {
-    src: "/video/arsa_compressed.webm",
+    src: mediaUrls.arsaCompressed,
     alt: "Arsa ve arazi tanıtım videosu",
     title: "Arsa Tanıtımı",
     description: "Yatırımlık arazi videoları",
@@ -113,7 +114,7 @@ export const websiteProjectsGalleryPhotos: GalleryPhoto[] = [
     profileIcon: "trophy",
   },
   {
-    src: "/video/houston.webm",
+    src: mediaUrls.houston,
     alt: "Houston emlak tanıtım videosu",
     title: "Houston Emlak Tanıtımı",
     description: "ABD gayrimenkul videoları",
@@ -124,7 +125,7 @@ export const websiteProjectsGalleryPhotos: GalleryPhoto[] = [
     profileIcon: "rocket",
   },
   {
-    src: "/video/stories.webm",
+    src: mediaUrls.stories,
     alt: "Instagram stories içerik videosu",
     title: "Stories İçerikleri",
     description: "Instagram & Snapchat hikayeleri",
@@ -135,7 +136,7 @@ export const websiteProjectsGalleryPhotos: GalleryPhoto[] = [
     profileIcon: "camera",
   },
   {
-    src: "/video/video2.webm",
+    src: mediaUrls.video2,
     alt: "Influencer içerik üretimi videosu",
     title: "Influencer İçerik Videosu",
     description: "Sosyal medya içerik üretimi",
@@ -146,7 +147,7 @@ export const websiteProjectsGalleryPhotos: GalleryPhoto[] = [
     profileIcon: "sparkles",
   },
   {
-    src: "/video/video3.webm",
+    src: mediaUrls.video3,
     alt: "Ürün tanıtım videosu",
     title: "Ürün Tanıtım Videosu",
     description: "Marka & ürün çekimleri",
@@ -157,7 +158,7 @@ export const websiteProjectsGalleryPhotos: GalleryPhoto[] = [
     profileIcon: "camera",
   },
   {
-    src: "/video/video4.webm",
+    src: mediaUrls.video4,
     alt: "Profesyonel reklam videosu",
     title: "Reklam Videosu",
     description: "Profesyonel reklam içerikleri",
@@ -168,7 +169,7 @@ export const websiteProjectsGalleryPhotos: GalleryPhoto[] = [
     profileIcon: "rocket",
   },
   {
-    src: "/TRr.png",
+    src: mediaUrls.trr,
     alt: "Grafik tasarım örneği",
     title: "Özel Grafik Tasarımlar",
     description: "Markaya özel görsel çalışmalar",

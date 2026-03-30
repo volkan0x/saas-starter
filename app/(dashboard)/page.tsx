@@ -1,6 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { CreditCard, Database, Zap, Shield, Code2, Gauge, Sparkles, Users, Heart, MessageCircle, Send, Bookmark, Facebook, Instagram, Linkedin, Youtube, Video, Palette, Camera, Star, Rocket, Briefcase, Trophy, Lightbulb, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Terminal } from './terminal';
+import mediaUrls, { getInstagramImage } from '@/lib/media-urls';
 import { BentoGrid, BentoGridItem } from '@/components/ui/bento-grid';
 import { ContainerTextFlip } from "@/components/ui/container-text-flip";
 import { DottedGlowBackground } from '@/components/ui/dotted-glow-background';
@@ -87,8 +88,8 @@ export default function HomePage() {
                         preload="metadata"
                         className="absolute inset-0 h-full w-full object-cover"
                       >
-                        <source src="/influencer_video.mp4" type="video/mp4" />
-                        <source src="/influencer_video.webm" type="video/webm" />
+                        <source src={mediaUrls.influencerMp4} type="video/mp4" />
+                        <source src={mediaUrls.influencerWebm} type="video/webm" />
                       </video>
                       {/* Action buttons */}
                       <div className="absolute bottom-0 right-0 left-0 flex gap-3 items-center justify-end p-4 bg-gradient-to-t from-black/30 to-transparent">
@@ -122,7 +123,7 @@ export default function HomePage() {
                           playsInline
                           className="h-full w-full object-cover"
                         >
-                            <source src="/video1feedbird_first13sec.mp4" type="video/mp4" />
+                            <source src={mediaUrls.video1feedbird} type="video/mp4" />
                         </video>
                         
                         {/* Action buttons */}
@@ -210,7 +211,7 @@ export default function HomePage() {
                     <div className="h-20 w-20 rounded-full bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 p-[2px]">
                       <div className="h-full w-full rounded-full bg-white p-[2px]">
                         <img
-                          src="/instagram5.jpg"
+                          src={mediaUrls.instagram5}
                           alt="Profile"
                           className="h-full w-full rounded-full object-cover"
                         />
@@ -242,7 +243,7 @@ export default function HomePage() {
                   {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((i) => (
                     <div key={i} className="aspect-square overflow-hidden">
                       <img
-                        src={`/instagram${i}.jpg`}
+                        src={getInstagramImage(i)}
                         alt={`Instagram post ${i}`}
                         className="h-full w-full object-cover"
                       />
@@ -264,7 +265,7 @@ export default function HomePage() {
             <div className="flex h-full w-full items-center justify-center rounded-lg overflow-hidden bg-gradient-to-br from-purple-50 to-pink-50 p-2">
               <div className="w-full max-w-[480px] rounded-lg bg-white shadow-sm overflow-hidden">
                 <img
-                  src="/deb.jpg"
+                  src={mediaUrls.deb}
                   alt="Instagram Profile"
                   className="w-full h-auto object-cover"
                 />
