@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import styles from "./slider.module.css";
 import { videos } from "./videos";
 
@@ -37,7 +38,7 @@ export default function Slider() {
     if (!video?.siteUrl) return;
 
     if (video.openInNewTab) {
-      // Prefer a small popup window; fall back to modal if blocked.
+      // Open in a small popup window only - no fallback to new tab
       const width = 520;
       const height = 760;
       const left = Math.max(0, Math.round(window.screenX + (window.outerWidth - width) / 2));
@@ -49,22 +50,16 @@ export default function Slider() {
         `height=${height}`,
         `left=${left}`,
         `top=${top}`,
-        "noopener=yes",
-        "noreferrer=yes",
       ].join(",");
 
-      const popup = window.open(video.siteUrl, "_blank", features);
+      const popup = window.open(video.siteUrl, "popupWindow", features);
       if (popup) {
         try {
-          popup.opener = null;
           popup.focus();
         } catch {
           // ignore
         }
-        return;
       }
-
-      openSiteModalByIndex(index);
       return;
     }
 
@@ -117,6 +112,15 @@ export default function Slider() {
             <div className={styles.media}>
               {isClient &&
                 (video.src ? (
+                  video.src.match(/\.(jpg|jpeg|png|gif|webp)$/i) ? (
+                    <div className={styles.mediaImageScrollWrapper}>
+                      <img
+                        src={video.src}
+                        alt={video.title}
+                        className={styles.mediaImageScroll}
+                      />
+                    </div>
+                  ) : (
                   <video
                     src={video.src}
                     className={`${styles.mediaEl} ${styles.mediaVideo}`}
@@ -125,6 +129,7 @@ export default function Slider() {
                     muted
                     playsInline
                   />
+                  )
                 ) : (
                   <iframe
                     src={`https://player.vimeo.com/video/${video.id}?background=1&autoplay=1&loop=1&muted=1`}
@@ -214,6 +219,15 @@ export default function Slider() {
                 ›
               </button>
 
+              {modalUrl?.match(/\.(jpg|jpeg|png|gif|webp)$/i) ? (
+                <div className={styles.modalImageContainer}>
+                  <img
+                    src={modalUrl}
+                    alt={activeVideo?.title || "Preview"}
+                    className={styles.modalImage}
+                  />
+                </div>
+              ) : (
               <iframe
                 src={modalUrl ?? "about:blank"}
                 className={styles.modalIframe}
@@ -221,6 +235,7 @@ export default function Slider() {
                 loading="lazy"
                 referrerPolicy="no-referrer"
               />
+              )}
             </div>
           </div>
         </div>

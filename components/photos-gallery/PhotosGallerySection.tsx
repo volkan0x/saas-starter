@@ -139,6 +139,38 @@ export default function PhotosGallerySection({
   const modalVideoRef = useRef<HTMLVideoElement | null>(null);
   const [isVideoMuted, setIsVideoMuted] = useState(true);
 
+  // Grid video refs for mobile sound toggle
+  const gridVideoRefs = useRef<Map<number, HTMLVideoElement>>(new Map());
+  const [unmutedVideoIndex, setUnmutedVideoIndex] = useState<number | null>(null);
+
+  const handleGridVideoClick = (e: React.MouseEvent, index: number, isVideo: boolean) => {
+    if (!isVideo) {
+      setOpenIndex(index);
+      return;
+    }
+    
+    e.stopPropagation();
+    const videoEl = gridVideoRefs.current.get(index);
+    if (!videoEl) return;
+
+    if (unmutedVideoIndex === index) {
+      // Currently unmuted, mute it
+      videoEl.muted = true;
+      setUnmutedVideoIndex(null);
+    } else {
+      // Mute previous video if any
+      if (unmutedVideoIndex !== null) {
+        const prevVideo = gridVideoRefs.current.get(unmutedVideoIndex);
+        if (prevVideo) prevVideo.muted = true;
+      }
+      // Unmute this video
+      videoEl.muted = false;
+      videoEl.volume = 1;
+      void videoEl.play().catch(() => {});
+      setUnmutedVideoIndex(index);
+    }
+  };
+
   const close = () => setOpenIndex(null);
 
   const goPrev = () => {
@@ -280,7 +312,7 @@ export default function PhotosGallerySection({
                   <button
                     key={`${photo.src}-${index}`}
                     type="button"
-                    onClick={() => setOpenIndex(index)}
+                    onClick={(e) => handleGridVideoClick(e, index, photo.mediaType === "video")}
                     className={cn(
                       "group relative w-full overflow-hidden border border-neutral-200 bg-white",
                       layout === "instagram" ? "rounded-lg shadow-none" : "rounded-2xl shadow-sm",
@@ -295,7 +327,12 @@ export default function PhotosGallerySection({
                       )}
                     >
                   {photo.mediaType === "video" ? (
+                    <>
                     <video
+                      ref={(el) => {
+                        if (el) gridVideoRefs.current.set(index, el);
+                        else gridVideoRefs.current.delete(index);
+                      }}
                       className="h-full w-full object-contain bg-black"
                       autoPlay
                       loop
@@ -306,6 +343,15 @@ export default function PhotosGallerySection({
                     >
                       <source src={photo.src} />
                     </video>
+                    {/* Sound indicator */}
+                    <div className="pointer-events-none absolute right-2 top-2 inline-flex items-center gap-1 rounded-full bg-black/50 px-2 py-1 text-xs text-white backdrop-blur">
+                      {unmutedVideoIndex === index ? (
+                        <Volume2 className="h-4 w-4" />
+                      ) : (
+                        <VolumeX className="h-4 w-4" />
+                      )}
+                    </div>
+                    </>
                   ) : (
                     <Image
                       src={photo.src}

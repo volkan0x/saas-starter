@@ -254,6 +254,25 @@ export default function HomePage() {
           }
           className="md:col-span-2 md:row-span-2"
         />
+        <BentoGridItem
+          title="Instagram Profil Yönetimi"
+          description="Profesyonel Instagram profil yönetimi ve içerik stratejisi ile takipçi kitlenizi büyütün."
+          profileName="Social Media"
+          profileIcon={<Trophy className="w-5 h-5" />}
+          whiteProfileIcon={true}
+          header={
+            <div className="flex h-full w-full items-center justify-center rounded-lg overflow-hidden bg-gradient-to-br from-purple-50 to-pink-50 p-2">
+              <div className="w-full max-w-[480px] rounded-lg bg-white shadow-sm overflow-hidden">
+                <img
+                  src="/deb.jpg"
+                  alt="Instagram Profile"
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+            </div>
+          }
+          className="md:col-span-2 md:row-span-2"
+        />
       </BentoGrid>
       <section className="py-16 bg-white w-full">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

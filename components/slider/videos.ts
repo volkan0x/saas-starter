@@ -42,6 +42,14 @@ export const videos: SliderVideo[] = [
     siteUrl: "https://bursagunlukkiralikdaireler.com/",
   },
   {
+    id: "flora-garden-hotel",
+    title: "Flora Garden Hotel",
+    category: "Hotel",
+    date: "March 2026",
+    src: "/FloraLanding.jpg",
+    siteUrl: "/FloraLanding.jpg",
+  },
+  {
     id: "uzmantasimaci.webm",
     title: "Uzman Nakliyat",
     category: "Nature",
