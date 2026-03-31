@@ -48,8 +48,8 @@ export const videos: SliderVideo[] = [
     title: "Flora Garden Hotel",
     category: "Hotel",
     date: "March 2026",
-    src: mediaUrls.floraLanding,
-    siteUrl: mediaUrls.floraLanding,
+    src: "/FloraLanding.jpg",
+    siteUrl: "/FloraLanding.jpg",
   },
   {
     id: "uzmantasimaci.webm",
