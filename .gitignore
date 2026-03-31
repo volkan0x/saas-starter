@@ -48,3 +48,6 @@ public/*.jpeg
 public/*.png
 public/*.gif
 public/video/
+
+# Backup klasörü (büyük dosyalar)
+public/backup/
