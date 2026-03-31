@@ -24,19 +24,23 @@ import {
 
 import { cn } from "@/lib/utils";
 
-// LazyVideo component with Intersection Observer
+// LazyVideo component with Intersection Observer - Click to play
 function LazyGalleryVideo({
   src,
   poster,
   videoRef,
   unmuted,
   className,
+  isPlaying,
+  onPlayToggle,
 }: {
   src: string;
   poster?: string;
   videoRef: (el: HTMLVideoElement | null) => void;
   unmuted: boolean;
   className: string;
+  isPlaying: boolean;
+  onPlayToggle: () => void;
 }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const internalVideoRef = useRef<HTMLVideoElement | null>(null);
@@ -76,16 +80,17 @@ function LazyGalleryVideo({
     }
   }, [isInView, isLoaded]);
 
+  // Play/pause based on isPlaying prop and visibility
   useEffect(() => {
     const video = internalVideoRef.current;
     if (!video || !isLoaded) return;
 
-    if (isInView) {
+    if (isPlaying && isInView) {
       video.play().catch(() => {});
     } else {
       video.pause();
     }
-  }, [isInView, isLoaded]);
+  }, [isPlaying, isInView, isLoaded]);
 
   return (
     <div ref={containerRef} className="relative h-full w-full">
@@ -109,6 +114,22 @@ function LazyGalleryVideo({
       >
         {isInView && <source src={src} />}
       </video>
+      {/* Play button overlay when not playing */}
+      {!isPlaying && isLoaded && (
+        <div 
+          className="absolute inset-0 flex items-center justify-center bg-black/30 cursor-pointer"
+          onClick={(e) => {
+            e.stopPropagation();
+            onPlayToggle();
+          }}
+        >
+          <div className="flex h-14 w-14 items-center justify-center rounded-full bg-white/90 shadow-lg transition hover:scale-110">
+            <svg className="h-6 w-6 text-neutral-900 ml-1" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
@@ -231,6 +252,17 @@ export default function PhotosGallerySection({
   // Grid video refs for mobile sound toggle
   const gridVideoRefs = useRef<Map<number, HTMLVideoElement>>(new Map());
   const [unmutedVideoIndex, setUnmutedVideoIndex] = useState<number | null>(null);
+  const [playingVideoIndex, setPlayingVideoIndex] = useState<number | null>(null);
+
+  const handleVideoPlayToggle = (index: number) => {
+    if (playingVideoIndex === index) {
+      // Currently playing, pause it
+      setPlayingVideoIndex(null);
+    } else {
+      // Pause previous video and play this one
+      setPlayingVideoIndex(index);
+    }
+  };
 
   const handleGridVideoClick = (e: React.MouseEvent, index: number, isVideo: boolean) => {
     if (!isVideo) {
@@ -295,6 +327,9 @@ export default function PhotosGallerySection({
   useEffect(() => {
     // If the filter changes while modal is open, close it to avoid index mismatch.
     close();
+    // Reset playing video state
+    setPlayingVideoIndex(null);
+    setUnmutedVideoIndex(null);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeTag]);
 
@@ -425,9 +460,12 @@ export default function PhotosGallerySection({
                         else gridVideoRefs.current.delete(index);
                       }}
                       unmuted={unmutedVideoIndex === index}
+                      isPlaying={playingVideoIndex === index}
+                      onPlayToggle={() => handleVideoPlayToggle(index)}
                       className="h-full w-full object-contain bg-black"
                     />
-                    {/* Sound indicator */}
+                    {/* Sound indicator - only show when playing */}
+                    {playingVideoIndex === index && (
                     <div className="pointer-events-none absolute right-2 top-2 inline-flex items-center gap-1 rounded-full bg-black/50 px-2 py-1 text-xs text-white backdrop-blur">
                       {unmutedVideoIndex === index ? (
                         <Volume2 className="h-4 w-4" />
@@ -435,6 +473,7 @@ export default function PhotosGallerySection({
                         <VolumeX className="h-4 w-4" />
                       )}
                     </div>
+                    )}
                     </>
                   ) : (
                     <Image

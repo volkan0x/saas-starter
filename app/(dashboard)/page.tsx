@@ -212,7 +212,7 @@ export default function HomePage() {
                     <div className="h-20 w-20 rounded-full bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 p-[2px]">
                       <div className="h-full w-full rounded-full bg-white p-[2px]">
                         <img
-                          src={mediaUrls.instagram5}
+                          src="/instagram5.jpg"
                           alt="Profile"
                           className="h-full w-full rounded-full object-cover"
                         />
@@ -244,7 +244,7 @@ export default function HomePage() {
                   {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((i) => (
                     <div key={i} className="aspect-square overflow-hidden">
                       <img
-                        src={getInstagramImage(i)}
+                        src={`/instagram${i}.jpg`}
                         alt={`Instagram post ${i}`}
                         className="h-full w-full object-cover"
                       />

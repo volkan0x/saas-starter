@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import { Volume2, VolumeX } from "lucide-react";
+import { Volume2, VolumeX, Play } from "lucide-react";
 
 import type { GalleryPhoto } from "@/components/photos-gallery/PhotosGallerySection";
 import { cn } from "@/lib/utils";
@@ -55,6 +55,7 @@ export default function MobileVideoFeed({
   const [hasInteracted, setHasInteracted] = useState(false);
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [unmutedIndex, setUnmutedIndex] = useState<number | null>(null);
+  const [pausedVideos, setPausedVideos] = useState<Set<number>>(new Set());
 
   const cardRefs = useRef<Array<HTMLDivElement | null>>([]);
   const videoRefs = useRef<Array<HTMLVideoElement | null>>([]);
@@ -238,29 +239,44 @@ export default function MobileVideoFeed({
                     controls={false}
                     onClick={(e) => {
                       const video = e.currentTarget;
-                      if (video.paused) void video.play();
-                      else video.pause();
+                      if (video.paused) {
+                        void video.play();
+                        setPausedVideos((prev) => {
+                          const next = new Set(prev);
+                          next.delete(index);
+                          return next;
+                        });
+                      } else {
+                        video.pause();
+                        setPausedVideos((prev) => new Set(prev).add(index));
+                      }
                     }}
                   >
                     <source src={mp4Src} type="video/mp4" />
                     {webmSrc && <source src={webmSrc} type="video/webm" />}
                   </video>
 
-                  {!isOpen && (
+                  {/* Play butonu - video duraklatıldığında veya başlamadığında göster */}
+                  {(!isOpen || pausedVideos.has(index)) && (
                     <button
                       type="button"
-                      className="absolute inset-0 flex items-center justify-center bg-gradient-to-t from-black/50 via-black/10 to-transparent"
+                      className="absolute inset-0 flex items-center justify-center bg-black/30"
                       aria-label="Videoyu oynat"
                       onClick={() => {
                         setHasInteracted(true);
                         setActiveIndex(index);
+                        setPausedVideos((prev) => {
+                          const next = new Set(prev);
+                          next.delete(index);
+                          return next;
+                        });
                         const video = videoRefs.current[index];
                         if (video) void video.play();
                       }}
                     >
-                      <span className="rounded-full bg-white/90 px-4 py-2 text-sm font-semibold text-black shadow">
-                        Oynat
-                      </span>
+                      <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white/90 shadow-lg transition hover:scale-110">
+                        <Play className="h-8 w-8 text-neutral-900 ml-1" fill="currentColor" />
+                      </div>
                     </button>
                   )}
 

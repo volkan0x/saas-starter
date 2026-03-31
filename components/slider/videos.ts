@@ -24,7 +24,7 @@ export const videos: SliderVideo[] = [
     title: "E-ticaret Admin Paneli",
     category: "E-commerce",
     date: "March 2026",
-    src: mediaUrls.medusaAdmin,
+    src: "/medusa-admin.webm",
     siteUrl: "https://medusajs.com/admin/",
   },
   {
