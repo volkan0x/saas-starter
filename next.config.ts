@@ -15,6 +15,11 @@ const nextConfig: NextConfig = {
         hostname: 'siqudo1i7q0g1vg6.public.blob.vercel-storage.com',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'pub-d7ec1a8fa14f4570abdeff8e1cb2012e.r2.dev',
+        pathname: '/**',
+      },
     ],
   },
 };

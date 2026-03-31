@@ -1,7 +1,7 @@
-// Vercel Blob Storage URL'leri
-// Bu dosya scripts/upload-to-blob.ts tarafından oluşturulan blob-urls.json'dan türetilmiştir
+// Cloudflare R2 Storage URL'leri
+// Bandwidth tamamen ücretsiz! 🎉
 
-const BLOB_BASE = "https://siqudo1i7q0g1vg6.public.blob.vercel-storage.com";
+const BLOB_BASE = "https://pub-d7ec1a8fa14f4570abdeff8e1cb2012e.r2.dev";
 
 export const mediaUrls = {
   // Videos
@@ -9,8 +9,9 @@ export const mediaUrls = {
   influencerMp4: `${BLOB_BASE}/influencer_video.mp4`,
   influencerWebm: `${BLOB_BASE}/influencer_video.webm`,
   video1feedbird: `${BLOB_BASE}/video1feedbird_first13sec.mp4`,
-  sosyalMedyaWebm: `${BLOB_BASE}/sosyal-medya-video.webm`,
-  sosyalMedyaMp4: `${BLOB_BASE}/sosyal-medya-video.mp4`,
+  gallerima1: `${BLOB_BASE}/Gallerima_1.mp4`,
+  gallerima3: `${BLOB_BASE}/gallerima3.mp4`,
+  gallerima3Big: `${BLOB_BASE}/Gallerima_3.mp4`,
   ticaret: `${BLOB_BASE}/video/ticaret.webm`,
   villa: `${BLOB_BASE}/video/villa.webm`,
   konut: `${BLOB_BASE}/video/konut.webm`,
