@@ -9,16 +9,21 @@ import { videos } from "./videos";
 function LazySliderVideo({ 
   src, 
   title, 
-  className 
+  className,
+  sliderVisible = true 
 }: { 
   src: string; 
   title: string; 
   className: string;
+  sliderVisible?: boolean;
 }) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [isInView, setIsInView] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
+
+  // Video should play only when both in view AND slider is visible
+  const shouldPlay = isInView && sliderVisible;
 
   useEffect(() => {
     const container = containerRef.current;
@@ -37,6 +42,7 @@ function LazySliderVideo({
     return () => observer.disconnect();
   }, []);
 
+  // Load video when in view
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
@@ -47,16 +53,17 @@ function LazySliderVideo({
     }
   }, [isInView, isLoaded]);
 
+  // Play/pause based on visibility
   useEffect(() => {
     const video = videoRef.current;
     if (!video || !isLoaded) return;
 
-    if (isInView) {
+    if (shouldPlay) {
       video.play().catch(() => {});
     } else {
       video.pause();
     }
-  }, [isInView, isLoaded]);
+  }, [shouldPlay, isLoaded]);
 
   return (
     <div ref={containerRef} className="relative w-full h-full">
@@ -81,9 +88,29 @@ function LazySliderVideo({
 
 export default function Slider() {
   const gridRef = useRef<HTMLDivElement | null>(null);
+  const sliderRef = useRef<HTMLDivElement | null>(null);
   const [isClient, setIsClient] = useState(false);
+  const [isSliderVisible, setIsSliderVisible] = useState(true);
   const [activeVideoIndex, setActiveVideoIndex] = useState<number | null>(null);
   const touchStartRef = useRef<{ x: number; y: number } | null>(null);
+
+  // Track slider visibility
+  useEffect(() => {
+    const slider = sliderRef.current;
+    if (!slider) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          setIsSliderVisible(entry.isIntersecting);
+        });
+      },
+      { rootMargin: "50px", threshold: 0 }
+    );
+
+    observer.observe(slider);
+    return () => observer.disconnect();
+  }, []);
 
   const openInModalIndices = videos
     .map((video, index) => (video.siteUrl ? index : -1))
@@ -167,7 +194,7 @@ export default function Slider() {
   }, [isModalOpen]);
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} ref={sliderRef}>
       <div className={styles.grid} ref={gridRef}>
         {videos.map((video, index) => (
           <article className={styles.card} key={video.id}>
@@ -200,6 +227,7 @@ export default function Slider() {
                       src={video.src}
                       title={video.title}
                       className={`${styles.mediaEl} ${styles.mediaVideo}`}
+                      sliderVisible={isSliderVisible}
                     />
                   )
                 ) : (
