@@ -8,6 +8,7 @@ export type SliderVideo = {
   src?: string;
   siteUrl?: string;
   openInNewTab?: boolean;
+  poster?: string;
 };
 
 export const videos: SliderVideo[] = [
@@ -18,6 +19,7 @@ export const videos: SliderVideo[] = [
     date: "March 2026",
     src: mediaUrls.medusaFrontend,
     siteUrl: "https://storefront-production-f35a.up.railway.app/dk/store",
+    poster: mediaUrls.posters.medusaFrontend,
   },
   {
     id: "medusa-admin.webm",
@@ -26,6 +28,7 @@ export const videos: SliderVideo[] = [
     date: "March 2026",
     src: mediaUrls.medusaAdmin,
     siteUrl: "https://medusajs.com/admin/",
+    poster: mediaUrls.posters.medusaAdmin,
   },
   {
     id: "havadurumu.webm",
@@ -34,6 +37,7 @@ export const videos: SliderVideo[] = [
     date: "March 2026",
     src: mediaUrls.havadurumu,
     siteUrl: "https://havadurumu-fawn.vercel.app/",
+    poster: mediaUrls.posters.havadurumu,
   },
   {
     id: "bursa-gunluk-kiralik-daireler.webm",
@@ -42,6 +46,7 @@ export const videos: SliderVideo[] = [
     date: "July 2022",
     src: mediaUrls.bursaGunlukKiralik,
     siteUrl: "https://bursagunlukkiralikdaireler.com/",
+    poster: mediaUrls.posters.bursaGunlukKiralik,
   },
   {
     id: "flora-garden-hotel",
@@ -58,6 +63,7 @@ export const videos: SliderVideo[] = [
     date: "March 2026",
     src: mediaUrls.uzmantasimaci,
     siteUrl: "https://uzmantasimaci.com/",
+    poster: mediaUrls.posters.uzmantasimaci,
   },
   {
     id: "benti-textile",
@@ -66,5 +72,6 @@ export const videos: SliderVideo[] = [
     date: "August 2022",
     src: mediaUrls.bentiTextile,
     siteUrl: "https://bentitextile.com/",
+    poster: mediaUrls.posters.bentiTextile,
   },
 ];

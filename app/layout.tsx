@@ -28,6 +28,10 @@ export default function RootLayout({
       lang="en"
       className={`bg-gray-200 dark:bg-gray-950 text-black dark:text-white ${inter.className}`}
     >
+      <head>
+        <link rel="preconnect" href="https://pub-d7ec1a8fa14f4570abdeff8e1cb2012e.r2.dev" />
+        <link rel="dns-prefetch" href="https://pub-d7ec1a8fa14f4570abdeff8e1cb2012e.r2.dev" />
+      </head>
       <body className="min-h-[100dvh] bg-gray-200">
         <SWRConfig
           value={{

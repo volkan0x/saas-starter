@@ -24,6 +24,7 @@ export const websiteProjectsGalleryPhotos: GalleryPhoto[] = [
     mediaType: "video",
     profileName: "Social Media Pro",
     profileIcon: "camera",
+    poster: mediaUrls.posters.gallerima1,
   },
   // {
   //   src: "/Deb.jpg",
@@ -46,6 +47,7 @@ export const websiteProjectsGalleryPhotos: GalleryPhoto[] = [
     mediaType: "video",
     profileName: "Drone Studios",
     profileIcon: "video",
+    poster: mediaUrls.posters.influencer,
   },
   {
     src: mediaUrls.video1feedbird,
@@ -57,6 +59,7 @@ export const websiteProjectsGalleryPhotos: GalleryPhoto[] = [
     mediaType: "video",
     profileName: "Content Studio",
     profileIcon: "sparkles",
+    poster: mediaUrls.posters.video1feedbird,
   },
   // {
   //   src: mediaUrls.ticaret,
@@ -101,6 +104,7 @@ export const websiteProjectsGalleryPhotos: GalleryPhoto[] = [
     mediaType: "video",
     profileName: "Ajans 99",
     profileIcon: "video",
+    poster: mediaUrls.posters.gallerima3Big,
   },
   {
     src: mediaUrls.burger,
@@ -112,6 +116,7 @@ export const websiteProjectsGalleryPhotos: GalleryPhoto[] = [
     mediaType: "video",
     profileName: "Ajans 99",
     profileIcon: "video",
+    poster: mediaUrls.posters.burger,
   },
   {
     src: mediaUrls.arsaCompressed,
@@ -213,7 +218,7 @@ export const websiteProjectsGalleryPhotos: GalleryPhoto[] = [
   //   profileIcon: "sparkles",
   // },
   {
-    src: "/frame.png",
+    src: mediaUrls.frame,
     alt: "Özel grafik tasarım örneği",
     title: "Özel Grafik Tasarımlar",
     description: "Dikkat çekici tasarım konseptleri",
@@ -224,7 +229,7 @@ export const websiteProjectsGalleryPhotos: GalleryPhoto[] = [
     profileIcon: "star",
   },
   {
-    src: "/final_video.mp4",
+    src: mediaUrls.finalVideo,
     alt: "Logo animasyonu örneği",
     title: "Profesyonel Logo Animasyonları",
     description: "Intro / logo hareketlendirme",
@@ -233,6 +238,7 @@ export const websiteProjectsGalleryPhotos: GalleryPhoto[] = [
     mediaType: "video",
     profileName: "3D Studio",
     profileIcon: "code2",
+    poster: mediaUrls.posters.finalVideo,
   },
   // {
   //   src: "/bentogrid-item-492.mp4",
@@ -246,7 +252,7 @@ export const websiteProjectsGalleryPhotos: GalleryPhoto[] = [
   //   profileIcon: "lightbulb",
   // },
   {
-    src: "/tayf.png",
+    src: mediaUrls.tayf,
     alt: "Grafik tasarım örneği 2",
     title: "Özel Grafik Tasarımlar",
     description: "Branding / konsept tasarım",
@@ -257,7 +263,7 @@ export const websiteProjectsGalleryPhotos: GalleryPhoto[] = [
     profileIcon: "palette",
   },
   {
-    src: "/downloaded_video.mp4",
+    src: mediaUrls.downloadedVideo,
     alt: "Profesyonel video içerik örneği",
     title: "Profesyonel Video İçerikler",
     description: "Çekim / kurgu / montaj",
@@ -266,9 +272,10 @@ export const websiteProjectsGalleryPhotos: GalleryPhoto[] = [
     mediaType: "video",
     profileName: "Pro Video Team",
     profileIcon: "code2",
+    poster: mediaUrls.posters.downloadedVideo,
   },
   {
-    src: "/vimeo-video-original.mp4",
+    src: mediaUrls.vimeoOriginal,
     alt: "Profesyonel video içerik örneği 2",
     title: "Profesyonel Video İçerikler",
     description: "Reklam / tanıtım videoları",
@@ -277,5 +284,6 @@ export const websiteProjectsGalleryPhotos: GalleryPhoto[] = [
     mediaType: "video",
     profileName: "Video Studio",
     profileIcon: "gauge",
+    poster: mediaUrls.posters.vimeoOriginal,
   },
 ];

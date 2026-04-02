@@ -10,12 +10,14 @@ function LazySliderVideo({
   src, 
   title, 
   className,
-  sliderVisible = true 
+  sliderVisible = true,
+  poster
 }: { 
   src: string; 
   title: string; 
   className: string;
   sliderVisible?: boolean;
+  poster?: string;
 }) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -69,7 +71,11 @@ function LazySliderVideo({
     <div ref={containerRef} className="relative w-full h-full">
       {!isLoaded && (
         <div className="absolute inset-0 flex items-center justify-center bg-gray-900">
-          <div className="h-6 w-6 animate-spin rounded-full border-2 border-white border-t-transparent" />
+          {poster ? (
+            <img src={poster} alt={title} className="absolute inset-0 h-full w-full object-cover" />
+          ) : (
+            <div className="h-6 w-6 animate-spin rounded-full border-2 border-white border-t-transparent" />
+          )}
         </div>
       )}
       <video
@@ -79,6 +85,7 @@ function LazySliderVideo({
         loop
         playsInline
         preload="none"
+        poster={poster}
       >
         {isInView && <source src={src} type="video/webm" />}
       </video>
@@ -228,6 +235,7 @@ export default function Slider() {
                       title={video.title}
                       className={`${styles.mediaEl} ${styles.mediaVideo}`}
                       sliderVisible={isSliderVisible}
+                      poster={video.poster}
                     />
                   )
                 ) : (

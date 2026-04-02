@@ -86,6 +86,7 @@ export default function HomePage() {
                         muted 
                         playsInline
                         preload="metadata"
+                        poster={mediaUrls.posters.influencer}
                         className="absolute inset-0 h-full w-full object-cover"
                       >
                         <source src={mediaUrls.influencerMp4} type="video/mp4" />
@@ -122,6 +123,7 @@ export default function HomePage() {
                           muted 
                           playsInline
                           preload="metadata"
+                          poster={mediaUrls.posters.video1feedbird}
                           className="h-full w-full object-cover"
                         >
                             <source src={mediaUrls.video1feedbird} type="video/mp4" />
