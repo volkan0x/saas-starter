@@ -24,7 +24,7 @@ export const videos: SliderVideo[] = [
     title: "E-ticaret Admin Paneli",
     category: "E-commerce",
     date: "March 2026",
-    src: "/medusa-admin.webm",
+    src: mediaUrls.medusaAdmin,
     siteUrl: "https://medusajs.com/admin/",
   },
   {
@@ -48,8 +48,8 @@ export const videos: SliderVideo[] = [
     title: "Flora Garden Hotel",
     category: "Hotel",
     date: "March 2026",
-    src: "/FloraLanding.jpg",
-    siteUrl: "/FloraLanding.jpg",
+    src: mediaUrls.floraLanding,
+    siteUrl: mediaUrls.floraLanding,
   },
   {
     id: "uzmantasimaci.webm",
