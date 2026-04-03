@@ -466,7 +466,7 @@ export default function HomePage() {
 
           {/* Footer Bottom */}
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-sm">
-            <p>&copy; 2026 Ajans99. Tüm hakları saklıdır.</p>
+            <p>&copy; 2026 Volkan Bozkurt. Tüm hakları saklıdır.</p>
           </div>
         </div>
       </footer>
