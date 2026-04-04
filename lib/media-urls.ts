@@ -37,6 +37,10 @@ export const mediaUrls = {
   yeniVideo: `${BLOB_BASE}/yeni-video.webm`,
   video4NoaudioMp4: `${BLOB_BASE}/video4_noaudio_trimmed.mp4`,
   video4NoaudioWebm: `${BLOB_BASE}/video4_noaudio_trimmed.webm`,
+  theKreatif: `${BLOB_BASE}/TheKreatif.webm`,
+  theKreatif2: `${BLOB_BASE}/TheKreatif2.webm`,
+  aradiginFirma: `${BLOB_BASE}/AradiginFirma.webm`,
+  paparinho: `${BLOB_BASE}/Paparinho.webm`,
   vimeoOriginal: `${BLOB_BASE}/vimeo-video-original.mp4`,
   downloadedVideo: `${BLOB_BASE}/downloaded_video.mp4`,
   finalVideo: `${BLOB_BASE}/final_video.mp4`,
@@ -64,6 +68,11 @@ export const mediaUrls = {
     vimeoOriginal: `${BLOB_BASE}/vimeo-video-original.webp`,
     downloadedVideo: `${BLOB_BASE}/downloaded_video.webp`,
     finalVideo: `${BLOB_BASE}/final_video.webp`,
+    theKreatif: `${BLOB_BASE}/TheKreatif.webp`,
+    theKreatif2: `${BLOB_BASE}/TheKreatif2.webp`,
+    aradiginFirma: `${BLOB_BASE}/AradiginFirma.webp`,
+    paparinho: `${BLOB_BASE}/Paparinho.webp`,
+    arsaCompressed: `${BLOB_BASE}/arsa_compressed.webp`,
   },
 
   // Images (WebP for better performance ~30% smaller)

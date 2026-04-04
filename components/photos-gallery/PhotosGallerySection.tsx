@@ -97,7 +97,7 @@ function LazyGalleryVideo({
       {!isLoaded && (
         <div className="absolute inset-0 flex items-center justify-center bg-gray-900">
           {poster ? (
-            <Image src={poster} alt="" fill className="object-cover" />
+            <Image src={poster} alt="" fill className="object-cover" unoptimized />
           ) : (
             <div className="h-6 w-6 animate-spin rounded-full border-2 border-white border-t-transparent" />
           )}
@@ -483,6 +483,7 @@ export default function PhotosGallerySection({
                       sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw"
                       className="object-cover transition duration-300 group-hover:scale-[1.03]"
                       loading="lazy"
+                      unoptimized
                     />
                   )}
                   {layout === "instagram" && (
@@ -619,6 +620,7 @@ export default function PhotosGallerySection({
                     sizes="(min-width: 1024px) 70vw, 95vw"
                     className="object-contain"
                     priority
+                    unoptimized
                   />
                 )}
               </div>
