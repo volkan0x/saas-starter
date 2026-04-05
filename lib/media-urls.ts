@@ -40,7 +40,7 @@ export const mediaUrls = {
   theKreatif: `${BLOB_BASE}/TheKreatif_v2.webm`,
   theKreatif2: `${BLOB_BASE}/TheKreatif2_v2.webm`,
   aradiginFirma: `${BLOB_BASE}/AradiginFirma_v2.webm`,
-  paparinho: `${BLOB_BASE}/Paparinho.webm`,
+  paparinho: `${BLOB_BASE}/Paparinho_v2.webm`,
   vimeoOriginal: `${BLOB_BASE}/vimeo-video-original.mp4`,
   downloadedVideo: `${BLOB_BASE}/downloaded_video.mp4`,
   finalVideo: `${BLOB_BASE}/final_video.mp4`,
