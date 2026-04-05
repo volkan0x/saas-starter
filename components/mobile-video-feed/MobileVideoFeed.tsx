@@ -216,7 +216,23 @@ export default function MobileVideoFeed({
                 )}
               >
                 <div className="p-4">
-                  <div className="text-base font-semibold text-gray-900">{item.title ?? "Video"}</div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-base font-semibold text-gray-900">{item.title ?? "Video"}</span>
+                    {item.country && (
+                      <span className="text-lg" title={item.country}>
+                        {item.country === "TR" && "🇹🇷"}
+                        {item.country === "US" && "🇺🇸"}
+                        {item.country === "DE" && "🇩🇪"}
+                        {item.country === "GB" && "🇬🇧"}
+                        {item.country === "FR" && "🇫🇷"}
+                        {item.country === "NL" && "🇳🇱"}
+                        {item.country === "ES" && "🇪🇸"}
+                        {item.country === "IT" && "🇮🇹"}
+                        {item.country === "AE" && "🇦🇪"}
+                        {item.country === "SA" && "🇸🇦"}
+                      </span>
+                    )}
+                  </div>
                   {item.description && <div className="mt-1 text-sm text-gray-600">{item.description}</div>}
                 </div>
 
@@ -252,8 +268,8 @@ export default function MobileVideoFeed({
                       }
                     }}
                   >
-                    <source src={mp4Src} type="video/mp4" />
                     {webmSrc && <source src={webmSrc} type="video/webm" />}
+                    <source src={mp4Src} type="video/mp4" />
                   </video>
 
                   {/* Play butonu - video duraklatıldığında veya başlamadığında göster */}

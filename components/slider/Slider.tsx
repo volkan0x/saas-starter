@@ -146,7 +146,16 @@ export default function Slider() {
     if (!video?.siteUrl) return;
 
     if (video.openInNewTab) {
-      // Open in a small popup window only - no fallback to new tab
+      // Check if mobile (screen width < 768px)
+      const isMobile = window.innerWidth < 768;
+      
+      if (isMobile) {
+        // Mobile: open directly in new tab
+        window.open(video.siteUrl, "_blank");
+        return;
+      }
+
+      // Desktop: Open in a small popup window
       const width = 520;
       const height = 760;
       const left = Math.max(0, Math.round(window.screenX + (window.outerWidth - width) / 2));

@@ -157,6 +157,7 @@ export type GalleryPhoto = {
     | "trophy"
     | "code2"
     | "gauge";
+  country?: "TR" | "US" | "DE" | "GB" | "FR" | "NL" | "ES" | "IT" | "AE" | "SA";
 };
 
 const aspectClass: Record<NonNullable<GalleryPhoto["aspect"]>, string> = {

@@ -24,10 +24,6 @@ const files = [
   { name: "TheKreatif2.webm", type: "video/webm" },
   { name: "AradiginFirma.webm", type: "video/webm" },
   { name: "Paparinho.webm", type: "video/webm" },
-  { name: "TheKreatif.webp", type: "image/webp" },
-  { name: "TheKreatif2.webp", type: "image/webp" },
-  { name: "AradiginFirma.webp", type: "image/webp" },
-  { name: "Paparinho.webp", type: "image/webp" },
 ];
 
 async function uploadFile(fileName: string, contentType: string) {

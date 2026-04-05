@@ -25,6 +25,7 @@ export const websiteProjectsGalleryPhotos: GalleryPhoto[] = [
     profileName: "Social Media Pro",
     profileIcon: "camera",
     poster: mediaUrls.posters.gallerima1,
+    country: "TR",
   },
   // {
   //   src: "/Deb.jpg",
@@ -48,6 +49,7 @@ export const websiteProjectsGalleryPhotos: GalleryPhoto[] = [
     profileName: "Drone Studios",
     profileIcon: "video",
     poster: mediaUrls.posters.influencer,
+    country: "TR",
   },
   {
     src: mediaUrls.video1feedbird,
@@ -60,6 +62,7 @@ export const websiteProjectsGalleryPhotos: GalleryPhoto[] = [
     profileName: "Content Studio",
     profileIcon: "sparkles",
     poster: mediaUrls.posters.video1feedbird,
+    country: "TR",
   },
   // {
   //   src: mediaUrls.ticaret,
@@ -82,6 +85,7 @@ export const websiteProjectsGalleryPhotos: GalleryPhoto[] = [
     mediaType: "video",
     profileName: "Real Estate Media",
     profileIcon: "star",
+    country: "TR",
   },
   {
     src: mediaUrls.konut,
@@ -93,6 +97,7 @@ export const websiteProjectsGalleryPhotos: GalleryPhoto[] = [
     mediaType: "video",
     profileName: "Real Estate Media",
     profileIcon: "lightbulb",
+    country: "TR",
   },
   {
     src: mediaUrls.gallerima3Big,
@@ -105,6 +110,7 @@ export const websiteProjectsGalleryPhotos: GalleryPhoto[] = [
     profileName: "Ajans 99",
     profileIcon: "video",
     poster: mediaUrls.posters.gallerima3Big,
+    country: "TR",
   },
   {
     src: mediaUrls.burger,
@@ -117,6 +123,7 @@ export const websiteProjectsGalleryPhotos: GalleryPhoto[] = [
     profileName: "Ajans 99",
     profileIcon: "video",
     poster: mediaUrls.posters.burger,
+    country: "TR",
   },
   {
     src: mediaUrls.arsaCompressed,
@@ -129,6 +136,7 @@ export const websiteProjectsGalleryPhotos: GalleryPhoto[] = [
     profileName: "Land Media",
     profileIcon: "trophy",
     poster: mediaUrls.posters.arsaCompressed,
+    country: "TR",
   },
   {
     src: mediaUrls.houston,
@@ -140,6 +148,7 @@ export const websiteProjectsGalleryPhotos: GalleryPhoto[] = [
     mediaType: "video",
     profileName: "Global Real Estate",
     profileIcon: "rocket",
+    country: "US",
   },
   {
     src: mediaUrls.stories,
@@ -151,6 +160,7 @@ export const websiteProjectsGalleryPhotos: GalleryPhoto[] = [
     mediaType: "video",
     profileName: "Stories Studio",
     profileIcon: "camera",
+    country: "TR",
   },
   {
     src: mediaUrls.video2,
@@ -162,6 +172,7 @@ export const websiteProjectsGalleryPhotos: GalleryPhoto[] = [
     mediaType: "video",
     profileName: "Influencer Studio",
     profileIcon: "sparkles",
+    country: "TR",
   },
   {
     src: mediaUrls.video3,
@@ -173,6 +184,7 @@ export const websiteProjectsGalleryPhotos: GalleryPhoto[] = [
     mediaType: "video",
     profileName: "Product Media",
     profileIcon: "camera",
+    country: "TR",
   },
   {
     src: mediaUrls.video4,
@@ -184,6 +196,7 @@ export const websiteProjectsGalleryPhotos: GalleryPhoto[] = [
     mediaType: "video",
     profileName: "Ad Studio",
     profileIcon: "rocket",
+    country: "TR",
   },
   // {
   //   src: mediaUrls.trr,
@@ -228,6 +241,7 @@ export const websiteProjectsGalleryPhotos: GalleryPhoto[] = [
     mediaType: "image",
     profileName: "Animation Pro",
     profileIcon: "star",
+    country: "TR",
   },
   {
     src: mediaUrls.finalVideo,
@@ -240,6 +254,7 @@ export const websiteProjectsGalleryPhotos: GalleryPhoto[] = [
     profileName: "3D Studio",
     profileIcon: "code2",
     poster: mediaUrls.posters.finalVideo,
+    country: "TR",
   },
   // {
   //   src: "/bentogrid-item-492.mp4",
@@ -262,6 +277,7 @@ export const websiteProjectsGalleryPhotos: GalleryPhoto[] = [
     mediaType: "image",
     profileName: "Design Expert",
     profileIcon: "palette",
+    country: "TR",
   },
   {
     src: mediaUrls.downloadedVideo,
@@ -274,6 +290,7 @@ export const websiteProjectsGalleryPhotos: GalleryPhoto[] = [
     profileName: "Pro Video Team",
     profileIcon: "code2",
     poster: mediaUrls.posters.downloadedVideo,
+    country: "TR",
   },
   {
     src: mediaUrls.vimeoOriginal,
@@ -286,6 +303,7 @@ export const websiteProjectsGalleryPhotos: GalleryPhoto[] = [
     profileName: "Video Studio",
     profileIcon: "gauge",
     poster: mediaUrls.posters.vimeoOriginal,
+    country: "TR",
   },
   {
     src: mediaUrls.theKreatif,
@@ -298,6 +316,7 @@ export const websiteProjectsGalleryPhotos: GalleryPhoto[] = [
     profileName: "The Kreatif",
     profileIcon: "sparkles",
     poster: mediaUrls.posters.theKreatif,
+    country: "TR",
   },
   {
     src: mediaUrls.theKreatif2,
@@ -310,6 +329,7 @@ export const websiteProjectsGalleryPhotos: GalleryPhoto[] = [
     profileName: "The Kreatif",
     profileIcon: "sparkles",
     poster: mediaUrls.posters.theKreatif2,
+    country: "TR",
   },
   {
     src: mediaUrls.aradiginFirma,
@@ -322,6 +342,7 @@ export const websiteProjectsGalleryPhotos: GalleryPhoto[] = [
     profileName: "Aradığın Firma",
     profileIcon: "rocket",
     poster: mediaUrls.posters.aradiginFirma,
+    country: "TR",
   },
   {
     src: mediaUrls.paparinho,
@@ -334,5 +355,6 @@ export const websiteProjectsGalleryPhotos: GalleryPhoto[] = [
     profileName: "Paparinho",
     profileIcon: "star",
     poster: mediaUrls.posters.paparinho,
+    country: "TR",
   },
 ];
