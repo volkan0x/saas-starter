@@ -11,6 +11,7 @@ import { websiteProjectsGalleryPhotos } from "@/lib/website-projects-gallery";
 import Slider from "@/components/slider/Slider";
 import MobileVideoFeed from "@/components/mobile-video-feed/MobileVideoFeed";
 import GraphicDesignCarousel from "@/components/graphic-design-carousel/GraphicDesignCarousel";
+import TallyForm from "@/components/tally-form/TallyForm";
 
 
 export default function HomePage() {
@@ -407,6 +408,13 @@ export default function HomePage() {
               </div>
         </div>
       </section>
+
+      {/* Tally Contact Form */}
+      <TallyForm 
+        formId="9qvYLE"
+        title="Bize Ulaşın"
+        description="Sorularınız veya teklif almak için formu doldurun, en kısa sürede size dönüş yapalım."
+      />
 
       {/* Footer */}
       <footer className="bg-gray-900 text-gray-300">
