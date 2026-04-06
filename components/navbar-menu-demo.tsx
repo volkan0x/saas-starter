@@ -2,6 +2,9 @@
 import React, { useState } from "react";
 import { Menu, MenuItem, ProductItem } from "@/components/ui/navbar-menu";
 import { cn } from "@/lib/utils";
+import LanguageToggle from "@/components/language-toggle/LanguageToggle";
+import { usePreferredLanguage } from "@/lib/hooks/usePreferredLanguage";
+import { t } from "@/lib/translations";
 
 export default function NavbarDemo() {
   return (
@@ -15,6 +18,8 @@ export default function NavbarDemo() {
 
 function Navbar({ className }: { className?: string }) {
   const [active, setActive] = useState<string | null>(null);
+  const language = usePreferredLanguage();
+  
   return (
     <div
       className={cn("hidden md:block fixed top-10 inset-x-0 max-w-2xl mx-auto z-50", className)}
@@ -24,9 +29,9 @@ function Navbar({ className }: { className?: string }) {
           href="/"
           className="px-4 py-2 text-black hover:opacity-[0.9] hover:underline hover:underline-offset-4 dark:text-white"
         >
-          Ana Sayfa
+          {t('nav.home', language)}
         </a>
-        <MenuItem setActive={setActive} active={active} item="Hizmetler">
+        <MenuItem setActive={setActive} active={active} item={t('nav.services', language)}>
           <div className="  text-sm grid grid-cols-2 gap-10 p-4">
             <ProductItem
               title="Firma Website Projeleri"
@@ -62,6 +67,7 @@ function Navbar({ className }: { className?: string }) {
             <HoveredLink href="/enterprise">Enterprise</HoveredLink>
           </div>
         </MenuItem> */}
+        <LanguageToggle />
       </Menu>
     </div>
   );
