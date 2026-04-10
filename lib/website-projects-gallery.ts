@@ -2,7 +2,7 @@ import type { GalleryPhoto } from "@/components/photos-gallery/PhotosGallerySect
 import mediaUrls from "@/lib/media-urls";
 
 export const websiteProjectsGalleryPhotos: GalleryPhoto[] = [
-  
+
   // {
   //   src: mediaUrls.roots,
   //   alt: "Roots video örneği",
@@ -355,6 +355,18 @@ export const websiteProjectsGalleryPhotos: GalleryPhoto[] = [
     profileName: "Paparinho",
     profileIcon: "star",
     poster: mediaUrls.posters.paparinho,
+    country: "TR",
+  },
+    {
+    src: mediaUrls.blockchain,
+    alt: "Blockchain ve kripto animasyon videosu",
+    title: "Blockchain & Kripto Animasyonları",
+    description: "Web3 ve blockchain tanıtım videoları",
+    tags: ["Video", "3D"],
+    aspect: "square",
+    mediaType: "video",
+    profileName: "Blockchain Studio",
+    profileIcon: "code2",
     country: "TR",
   },
 ];

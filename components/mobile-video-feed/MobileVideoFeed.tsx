@@ -241,13 +241,22 @@ export default function MobileVideoFeed({
                     "relative w-full bg-black",
                     isOpen ? "" : "",
                   )}
-                  style={{ aspectRatio: "9 / 16" }}
+                  style={{ 
+                    aspectRatio: item.aspect === "square" 
+                      ? "1 / 1" 
+                      : item.aspect === "landscape" 
+                        ? "16 / 9" 
+                        : "9 / 16" 
+                  }}
                 >
                   <video
                     ref={(el) => {
                       videoRefs.current[index] = el;
                     }}
-                    className="absolute inset-0 h-full w-full object-contain object-center"
+                    className={cn(
+                      "absolute inset-0 h-full w-full object-center",
+                      item.src.toLowerCase().includes("blockchain") ? "object-cover" : "object-contain"
+                    )}
                     playsInline
                     loop
                     muted

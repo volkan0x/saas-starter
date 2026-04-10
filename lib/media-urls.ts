@@ -45,6 +45,7 @@ export const mediaUrls = {
   downloadedVideo: `${BLOB_BASE}/downloaded_video.mp4`,
   finalVideo: `${BLOB_BASE}/final_video.mp4`,
   bentogridItem: `${BLOB_BASE}/bentogrid-item-492.mp4`,
+  blockchain: `${BLOB_BASE}/Blockchain.webm`,
 
   // Video Posters (first frame thumbnails for faster perceived loading)
   posters: {
@@ -77,6 +78,7 @@ export const mediaUrls = {
 
   // Images (WebP for better performance ~30% smaller)
   deb: `${BLOB_BASE}/Deb.webp`,
+  debBranding: `${BLOB_BASE}/DEB-Branding.webp`,
   feen5: `${BLOB_BASE}/Feen5.webp`,
   feen8: `${BLOB_BASE}/Feen8.webp`,
   feenEng2: `${BLOB_BASE}/FeenENG2.webp`,

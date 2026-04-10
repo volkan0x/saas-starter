@@ -84,6 +84,43 @@ export const translations: Record<Language, Record<string, string>> = {
     'filter.video': 'Video',
     'filter.graphic': 'Grafik',
     'filter.drone': 'Drone',
+
+    // BentoGrid Items
+    'bento.influencer.title': 'Influencer İçerik Üretimi',
+    'bento.influencer.description': 'İşletmeniz ve ürünleriniz için influencerlar tarafından oluşturulan özgün UGC içerikler. Hedef kitlenizle güven oluşturan, organik ve etkileşim odaklı video içerikler.',
+    'bento.graphicDesigns.title': 'İşinizi Yansıtan Grafik Tasarımları',
+    'bento.graphicDesigns.description': 'Markanızın kimliğini yansıtan özgün ve profesyonel grafik tasarımlar.',
+    'bento.instagramProfile.title': 'Instagram Profil Yönetimi',
+    'bento.instagramProfile.description': 'Profesyonel Instagram profil yönetimi ve içerik stratejisi ile takipçi kitlenizi büyütün.',
+    'bento.corporateIdentity.title': 'Kurumsal Kimlik Tasarımı',
+    'bento.corporateIdentity.description': 'Logo, kartvizit, antetli kağıt ve tüm kurumsal materyalleriniz için tutarlı ve profesyonel marka kimliği tasarımları.',
+
+    // Website Projects Section
+    'websiteProjects.clickToView': 'Kartlara tıklayarak projeleri yeni pencerede veya modalda inceleyebilirsin.',
+
+    // Mobile Video Feed
+    'mobileVideoFeed.description': 'İlk açılışta videolar kapalıdır. Aşağı sürükledikçe otomatik oynar.',
+
+    // Services Section
+    'services.socialMediaPosts.title': 'Sosyal Medya Paylaşımları',
+    'services.socialMediaPosts.description': 'Aylık olarak kanallarınıza oluşturulan ve yayınlanan statik, tek görsel içeren sosyal medya içerikleri.',
+    'services.seoManagement.title': 'SEO Yönetimi',
+    'services.seoManagement.description': 'Sıralamalarınızı iyileştirmek ve organik trafiğinizi artırmak için yönetilen SEO hizmeti sunuyoruz. Strateji, içerik, geri bağlantılar ve teknik düzeltmeleri biz üstleniyoruz.',
+    'services.shortVideos.title': 'Kısa Video İçerikler',
+    'services.shortVideos.description': 'Aylık olarak kanallarınıza oluşturulan ve yayınlanan kısa video içerikler.',
+    'services.videoAds.title': 'Video Reklamlar',
+    'services.videoAds.description': 'Sosyal medya için yüksek performanslı video reklamlar. Araştırma, senaryo yazımı, kurgu, metin yazarlığı. Müşteriye ait görüntüler, stok içerik ve kullanıcı tarafından oluşturulan içerik (UGC) tarzı kullanılıyor.',
+    'services.graphicAds.title': 'Grafik Reklamlar',
+    'services.graphicAds.description': 'Sosyal medya için yüksek performanslı video reklamlar. Araştırma, senaryo yazımı, kurgu, metin yazarlığı. Müşteriye ait görüntüler, stok içerik ve kullanıcı tarafından oluşturulan içerik (UGC) tarzı kullanılıyor.',
+    'services.ugcVideos.title': 'UGC(Influencer) Video İçerikler',
+    'services.ugcVideos.description': 'Aylık olarak kanallarınıza oluşturulan ve yayınlanan UGC (User Generated Content) video içerikler.',
+
+    // Profile Names
+    'profile.droneStudios': 'Drone Studios',
+    'profile.influencerCreators': 'Influencer Creators',
+    'profile.designStudio': 'Design Studio',
+    'profile.socialMedia': 'Social Media',
+    'profile.brandStudio': 'Brand Studio',
   },
   EN: {
     // Hero Section
@@ -168,6 +205,43 @@ export const translations: Record<Language, Record<string, string>> = {
     'filter.video': 'Video',
     'filter.graphic': 'Graphic',
     'filter.drone': 'Drone',
+
+    // BentoGrid Items
+    'bento.influencer.title': 'Influencer Content Creation',
+    'bento.influencer.description': 'Authentic UGC content created by influencers for your business and products. Organic and engagement-focused video content that builds trust with your target audience.',
+    'bento.graphicDesigns.title': 'Graphic Designs for Your Business',
+    'bento.graphicDesigns.description': 'Original and professional graphic designs that reflect your brand identity.',
+    'bento.instagramProfile.title': 'Instagram Profile Management',
+    'bento.instagramProfile.description': 'Grow your follower base with professional Instagram profile management and content strategy.',
+    'bento.corporateIdentity.title': 'Corporate Identity Design',
+    'bento.corporateIdentity.description': 'Consistent and professional brand identity designs for your logo, business cards, letterheads and all corporate materials.',
+
+    // Website Projects Section
+    'websiteProjects.clickToView': 'Click on cards to view projects in new window or modal.',
+
+    // Mobile Video Feed
+    'mobileVideoFeed.description': 'Videos are off on first load. They play automatically as you scroll down.',
+
+    // Services Section
+    'services.socialMediaPosts.title': 'Social Media Posts',
+    'services.socialMediaPosts.description': 'Static, single-image social media content created and published monthly to your channels.',
+    'services.seoManagement.title': 'SEO Management',
+    'services.seoManagement.description': 'We provide managed SEO service to improve your rankings and increase your organic traffic. Strategy, content, backlinks and technical fixes are handled by us.',
+    'services.shortVideos.title': 'Short Video Content',
+    'services.shortVideos.description': 'Short video content created and published monthly to your channels.',
+    'services.videoAds.title': 'Video Ads',
+    'services.videoAds.description': 'High-performance video ads for social media. Research, scriptwriting, editing, copywriting. Using client footage, stock content and UGC style.',
+    'services.graphicAds.title': 'Graphic Ads',
+    'services.graphicAds.description': 'High-performance graphic ads for social media. Research, scriptwriting, editing, copywriting. Using client footage, stock content and UGC style.',
+    'services.ugcVideos.title': 'UGC (Influencer) Video Content',
+    'services.ugcVideos.description': 'UGC (User Generated Content) video content created and published monthly to your channels.',
+
+    // Profile Names
+    'profile.droneStudios': 'Drone Studios',
+    'profile.influencerCreators': 'Influencer Creators',
+    'profile.designStudio': 'Design Studio',
+    'profile.socialMedia': 'Social Media',
+    'profile.brandStudio': 'Brand Studio',
   },
 };
 
