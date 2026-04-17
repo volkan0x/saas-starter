@@ -4,7 +4,7 @@ export const translations: Record<Language, Record<string, string>> = {
   TR: {
     // Hero Section
     'hero.title.line1': '5+ yıl deneyim ile uzman',
-    'hero.title.line2': 'hizmeti, markanıza özel paketlerle.',
+    'hero.title.line2': 'hizmetleri.',
     'hero.feature1': '✨ Markanızla uyumlu birinci sınıf içerik.',
     'hero.feature2': '💰 Alternatiflere göre %80 daha ucuz.',
     'hero.feature3': '👥 İnsanlar tarafından yapıldı, yapay zeka değil',
