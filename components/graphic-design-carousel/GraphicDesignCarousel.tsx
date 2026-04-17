@@ -5,6 +5,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import mediaUrls from "@/lib/media-urls";
 
 const images = [
+  { src: mediaUrls.tummyTuck, alt: "Tummy Tuck Grafik Tasarımı" },
   { src: mediaUrls.trr, alt: "Grafik Tasarım 1" },
   { src: mediaUrls.feen5, alt: "Grafik Tasarım 2" },
   { src: mediaUrls.feen8, alt: "Grafik Tasarım 3" },

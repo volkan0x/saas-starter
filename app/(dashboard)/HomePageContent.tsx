@@ -11,6 +11,9 @@ import { websiteProjectsGalleryPhotos } from "@/lib/website-projects-gallery";
 import Slider from "@/components/slider/Slider";
 import MobileVideoFeed from "@/components/mobile-video-feed/MobileVideoFeed";
 import GraphicDesignCarousel from "@/components/graphic-design-carousel/GraphicDesignCarousel";
+import Globe3DDemo from "@/components/3d-globe-demo";
+import ThreeDMarqueeDemo from "@/components/3d-marquee-demo";
+import FloatingDockDemo from "@/components/floating-dock-demo";
 import TallyForm from "@/components/tally-form/TallyForm";
 import { usePreferredLanguage } from '@/lib/hooks/usePreferredLanguage';
 import { t, getFlipWords } from '@/lib/translations';
@@ -21,7 +24,7 @@ export default function HomePageContent() {
   return (
     <main className="bg-gray-100">
       <NavbarDemo />
-      <section className="pt-8 pb-20">
+      <section className="pt-8 md:pt-28 lg:pt-32 pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="lg:grid lg:grid-cols-12 lg:gap-8">
             <div className="text-left md:max-w-2xl lg:col-span-6">
@@ -31,6 +34,9 @@ export default function HomePageContent() {
         <br />
         {t('hero.title.line2', language)}
       </h1>
+              <p className="mt-4 text-lg font-semibold text-slate-800 sm:text-xl">
+                İşinizi Yansıtan Grafik Tasarımları
+              </p>
               <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
                 {t('hero.feature1', language)}<br />
                 {t('hero.feature2', language)}<br />
@@ -71,8 +77,18 @@ export default function HomePageContent() {
                 </div>
               </div>
             </div>
-            <div className="mt-12 relative sm:max-w-lg sm:mx-auto lg:mt-0 lg:max-w-none lg:mx-0 lg:col-span-6 lg:flex lg:items-center">
-              <BentoGrid className="mx-auto">
+            <div className="mt-12 relative sm:max-w-lg sm:mx-auto lg:mt-0 lg:max-w-none lg:mx-0 lg:col-span-6 lg:flex lg:items-start">
+              <div className="w-full space-y-6">
+                {/* <div className="overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 shadow-sm">
+                  <Globe3DDemo />
+                  <div className="border-t border-slate-200 bg-gradient-to-b from-slate-100 to-slate-200 px-5 py-4">
+                    <h3 className="text-lg font-semibold text-slate-900">Dünyaya Açılın</h3>
+                    <p className="mt-2 text-sm leading-6 text-slate-600">
+                      Yurtdışı müşterilerinizi bulun, dünyaya açılın ve website ile video tasarımlarınızla markanızı global pazarda öne çıkarın.
+                    </p>
+                  </div>
+                </div> */}
+                <BentoGrid className="mx-auto">
                 <BentoGridItem
                   title={t('bento.instagramProfile.title', language)}
                   description={t('bento.instagramProfile.description', language)}
@@ -80,7 +96,7 @@ export default function HomePageContent() {
                   profileIcon={<Trophy className="w-5 h-5" />}
                   whiteProfileIcon={true}
                   header={
-                    <div className="flex h-full w-full items-center justify-center rounded-lg overflow-hidden bg-gradient-to-br from-purple-50 to-pink-50 p-4">
+                    <div className="flex h-full w-full items-center justify-center rounded-lg overflow-hidden bg-gradient-to-br from-slate-100 to-slate-200 p-4">
                       <div className="w-full max-w-[320px] rounded-lg bg-white shadow-sm">
                         <div className="space-y-3 p-4">
                           <div className="flex items-center gap-4">
@@ -131,45 +147,6 @@ export default function HomePageContent() {
                   className="md:col-span-2 md:row-span-2"
                 />
                 <BentoGridItem
-                  title={t('bento.drone.title', language)}
-                  description={t('bento.drone.description', language)}
-                  profileName={t('profile.droneStudios', language)}
-                  profileIcon={<Video className="w-5 h-5" />}
-                  whiteProfileIcon={true}
-                  header={
-                    <div
-                      className="relative w-full overflow-hidden rounded-lg bg-black"
-                      style={{ aspectRatio: "16 / 9" }}
-                    >
-                      <video 
-                        autoPlay 
-                        loop 
-                        muted 
-                        playsInline
-                        preload="metadata"
-                        poster={mediaUrls.posters.influencer}
-                        className="absolute inset-0 h-full w-full object-cover"
-                      >
-                        <source src={mediaUrls.influencerMp4} type="video/mp4" />
-                        <source src={mediaUrls.influencerWebm} type="video/webm" />
-                      </video>
-                      {/* Action buttons */}
-                      <div className="absolute bottom-0 right-0 left-0 flex gap-3 items-center justify-end p-4 bg-gradient-to-t from-black/30 to-transparent">
-                        <button className="text-white hover:scale-110 transition-transform drop-shadow-lg">
-                          <Heart className="w-6 h-6" />
-                        </button>
-                        <button className="text-white hover:scale-110 transition-transform drop-shadow-lg">
-                          <MessageCircle className="w-6 h-6" />
-                        </button>
-                        <button className="text-white hover:scale-110 transition-transform drop-shadow-lg">
-                          <Bookmark className="w-6 h-6" />
-                        </button>
-                      </div>
-                    </div>
-                  }
-                  className="md:col-span-2"
-                />
-                <BentoGridItem
                   title="Reklam Videosu"
                   description="Profesyonel reklam içerikleri"
                   profileName="Ad Studio"
@@ -214,18 +191,98 @@ export default function HomePageContent() {
                   profileIcon={<Palette className="w-5 h-5" />}
                   whiteProfileIcon={true}
                   header={
-                    <div className="flex h-full w-full items-center justify-center rounded-lg overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100">
+                    <div className="flex h-full w-full items-center justify-center rounded-lg overflow-hidden bg-gradient-to-br from-slate-100 to-slate-200">
                       <GraphicDesignCarousel />
                     </div>
                   }
                   className="md:col-span-2 md:row-span-2"
                 />
+                <BentoGridItem
+                  title="Stories İçerikleri"
+                  description="Instagram & Snapchat hikayeleri"
+                  profileName="Stories Studio"
+                  profileIcon={<Camera className="w-5 h-5" />}
+                  whiteProfileIcon={true}
+                  header={
+                    <div className="flex h-full w-full items-center justify-center rounded-lg overflow-hidden p-2">
+                      <div className="relative w-full max-w-[180px] h-[320px] overflow-hidden rounded-lg bg-black">
+                        <video 
+                          autoPlay 
+                          loop 
+                          muted 
+                          playsInline
+                          preload="metadata"
+                          className="h-full w-full object-contain"
+                        >
+                          <source src={mediaUrls.storiesMp4} type="video/mp4" />
+                          <source src={mediaUrls.stories} type="video/webm" />
+                        </video>
+
+                        <div className="absolute bottom-0 right-0 left-0 flex gap-3 items-center justify-end p-4 bg-gradient-to-t from-black/30 to-transparent">
+                          <button className="text-white hover:scale-110 transition-transform drop-shadow-lg">
+                            <Heart className="w-6 h-6" />
+                          </button>
+                          <button className="text-white hover:scale-110 transition-transform drop-shadow-lg">
+                            <MessageCircle className="w-6 h-6" />
+                          </button>
+                          <button className="text-white hover:scale-110 transition-transform drop-shadow-lg">
+                            <Bookmark className="w-6 h-6" />
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  }
+                  className="md:col-span-1 md:row-span-2"
+                />
+                {/* <BentoGridItem
+                  title={t('bento.drone.title', language)}
+                  description={t('bento.drone.description', language)}
+                  profileName={t('profile.droneStudios', language)}
+                  profileIcon={<Video className="w-5 h-5" />}
+                  whiteProfileIcon={true}
+                  header={
+                    <div
+                      className="relative w-full overflow-hidden rounded-lg bg-black"
+                      style={{ aspectRatio: "16 / 9" }}
+                    >
+                      <video 
+                        autoPlay 
+                        loop 
+                        muted 
+                        playsInline
+                        preload="metadata"
+                        poster={mediaUrls.posters.influencer}
+                        className="absolute inset-0 h-full w-full object-cover"
+                      >
+                        <source src={mediaUrls.influencerMp4} type="video/mp4" />
+                        <source src={mediaUrls.influencerWebm} type="video/webm" />
+                      </video>
+                      <div className="absolute bottom-0 right-0 left-0 flex gap-3 items-center justify-end p-4 bg-gradient-to-t from-black/30 to-transparent">
+                        <button className="text-white hover:scale-110 transition-transform drop-shadow-lg">
+                          <Heart className="w-6 h-6" />
+                        </button>
+                        <button className="text-white hover:scale-110 transition-transform drop-shadow-lg">
+                          <MessageCircle className="w-6 h-6" />
+                        </button>
+                        <button className="text-white hover:scale-110 transition-transform drop-shadow-lg">
+                          <Bookmark className="w-6 h-6" />
+                        </button>
+                      </div>
+                    </div>
+                  }
+                  className="md:col-span-2 md:row-span-2"
+                /> */}
               </BentoGrid>
+              </div>
             </div>
           </div>
         </div>
       </section>
-
+      <section className="bg-gray-100 py-8 md:py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ThreeDMarqueeDemo />
+        </div>
+      </section>
       <section className="bg-gray-800 pb-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <h2 className="text-3xl sm:text-3xl font-semibold text-white">{t('websiteProjects.title', language)}</h2>
@@ -268,8 +325,8 @@ export default function HomePageContent() {
           profileIcon={<Trophy className="w-5 h-5" />}
           whiteProfileIcon={true}
           header={
-            <div className="flex h-full w-full items-center justify-center rounded-lg overflow-hidden bg-gradient-to-br from-purple-50 to-pink-50 p-2">
-              <div className="w-full max-w-[480px] rounded-lg bg-white shadow-sm overflow-hidden">
+            <div className="flex h-full w-full items-center justify-center rounded-lg overflow-hidden bg-gradient-to-br from-slate-100 to-slate-200 p-2">
+              <div className="w-full max-w-[480px] rounded-lg bg-slate-50 shadow-sm overflow-hidden">
                 <img
                   src={mediaUrls.deb}
                   alt="Instagram Profile"
@@ -287,8 +344,8 @@ export default function HomePageContent() {
           profileIcon={<Palette className="w-5 h-5" />}
           whiteProfileIcon={true}
           header={
-            <div className="flex h-full w-full items-center justify-center rounded-lg overflow-hidden bg-gradient-to-br from-purple-50 to-pink-50 p-2">
-              <div className="w-full max-w-[480px] rounded-lg bg-white shadow-sm overflow-hidden">
+            <div className="flex h-full w-full items-center justify-center rounded-lg overflow-hidden bg-gradient-to-br from-slate-100 to-slate-200 p-2">
+              <div className="w-full max-w-[480px] rounded-lg bg-slate-50 shadow-sm overflow-hidden">
                 <img
                   src={mediaUrls.debBranding}
                   alt={t('bento.corporateIdentity.title', language)}
@@ -435,6 +492,10 @@ export default function HomePageContent() {
         title={t('contact.title', language)}
         description={t('contact.description', language)}
       />
+
+      <div className="fixed bottom-4 right-4 z-50 md:hidden">
+        <FloatingDockDemo />
+      </div>
 
       {/* Footer */}
       <footer className="bg-gray-900 text-gray-300">

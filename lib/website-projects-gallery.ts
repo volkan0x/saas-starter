@@ -245,6 +245,18 @@ export const websiteProjectsGalleryPhotos: GalleryPhoto[] = [
     country: "TR",
   },
   {
+    src: mediaUrls.tummyTuck,
+    alt: "Tummy Tuck estetik kliniği için kreatif tasarım",
+    title: "Tummy Tuck Kreatifi",
+    description: "Sağlık turizmine özel sosyal medya görseli",
+    tags: ["Grafik", "Sağlık"],
+    aspect: "square",
+    mediaType: "image",
+    profileName: "Medical Design",
+    profileIcon: "palette",
+    country: "TR",
+  },
+  {
     src: mediaUrls.finalVideo,
     alt: "Logo animasyonu örneği",
     title: "Profesyonel Logo Animasyonları",

@@ -43,7 +43,7 @@ export const BentoGridItem = ({
   return (
     <div
       className={cn(
-        "group/bento shadow-input row-span-1 flex flex-col justify-between space-y-4 rounded-xl border border-neutral-200 bg-white p-4 transition duration-200 hover:shadow-xl dark:border-white/[0.2] dark:bg-black dark:shadow-none",
+        "group/bento shadow-input row-span-1 flex flex-col justify-between space-y-4 rounded-xl border border-slate-200 bg-slate-100 p-4 transition duration-200 hover:shadow-xl dark:border-white/[0.2] dark:bg-black dark:shadow-none",
         className,
       )}
     >
@@ -52,7 +52,7 @@ export const BentoGridItem = ({
           {profileIcon ? (
             <div className={`w-10 h-10 rounded-full flex items-center justify-center ${
               whiteProfileIcon
-                ? "bg-white border-2 border-neutral-200"
+                ? "bg-slate-50 border-2 border-slate-200"
                 : "bg-gradient-to-br from-orange-400 to-orange-600"
             }`}>
               {whiteProfileIcon ? (
