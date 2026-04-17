@@ -21,11 +21,11 @@ export default function HomePageContent() {
   return (
     <main className="bg-gray-100">
       <NavbarDemo />
-      <section className="py-20">
+      <section className="pt-8 pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="lg:grid lg:grid-cols-12 lg:gap-8">
             <div className="text-left md:max-w-2xl lg:col-span-6">
-                <h1 className="text-3xl md:text-3xl lg:text-4xl font-semibold max-w-7xl text-left mt-6 relative z-20 py-6 bg-clip-text text-transparent bg-gradient-to-b from-neutral-800 via-neutral-700 to-neutral-700 dark:from-neutral-800 dark:via-white dark:to-white">
+                <h1 className="text-3xl md:text-3xl lg:text-4xl font-semibold max-w-7xl text-left mt-0 py-0 relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-800 via-neutral-700 to-neutral-700 dark:from-neutral-800 dark:via-white dark:to-white">
         {t('hero.title.line1', language)}<br />
         <ContainerTextFlip words={getFlipWords(language)} interval={3000} />
         <br />
@@ -74,6 +74,63 @@ export default function HomePageContent() {
             <div className="mt-12 relative sm:max-w-lg sm:mx-auto lg:mt-0 lg:max-w-none lg:mx-0 lg:col-span-6 lg:flex lg:items-center">
               <BentoGrid className="mx-auto">
                 <BentoGridItem
+                  title={t('bento.instagramProfile.title', language)}
+                  description={t('bento.instagramProfile.description', language)}
+                  profileName={t('profile.socialMedia', language)}
+                  profileIcon={<Trophy className="w-5 h-5" />}
+                  whiteProfileIcon={true}
+                  header={
+                    <div className="flex h-full w-full items-center justify-center rounded-lg overflow-hidden bg-gradient-to-br from-purple-50 to-pink-50 p-4">
+                      <div className="w-full max-w-[320px] rounded-lg bg-white shadow-sm">
+                        <div className="space-y-3 p-4">
+                          <div className="flex items-center gap-4">
+                            <div className="h-20 w-20 rounded-full bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 p-[2px]">
+                              <div className="h-full w-full rounded-full bg-white p-[2px]">
+                                <img
+                                  src={mediaUrls.instagram5}
+                                  alt="Profile"
+                                  className="h-full w-full rounded-full object-cover"
+                                />
+                              </div>
+                            </div>
+                            <div className="grid flex-1 grid-cols-3 gap-2 text-center">
+                              <div>
+                                <div className="text-sm font-semibold">1.2K</div>
+                                <div className="text-xs text-gray-500">Posts</div>
+                              </div>
+                              <div>
+                                <div className="text-sm font-semibold">45.8K</div>
+                                <div className="text-xs text-gray-500">Followers</div>
+                              </div>
+                              <div>
+                                <div className="text-sm font-semibold">892</div>
+                                <div className="text-xs text-gray-500">Following</div>
+                              </div>
+                            </div>
+                          </div>
+                          <div>
+                            <div className="text-sm font-semibold">Antalya Hotel</div>
+                            <div className="mt-1 text-xs text-gray-600">Professional Account</div>
+                          </div>
+                        </div>
+
+                        <div className="grid grid-cols-3 gap-[2px] bg-gray-100">
+                          {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((i) => (
+                            <div key={i} className="aspect-square overflow-hidden">
+                              <img
+                                src={getInstagramImage(i)}
+                                alt={`Instagram post ${i}`}
+                                className="h-full w-full object-cover"
+                              />
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  }
+                  className="md:col-span-2 md:row-span-2"
+                />
+                <BentoGridItem
                   title={t('bento.drone.title', language)}
                   description={t('bento.drone.description', language)}
                   profileName={t('profile.droneStudios', language)}
@@ -113,10 +170,10 @@ export default function HomePageContent() {
                   className="md:col-span-2"
                 />
                 <BentoGridItem
-                  title={t('bento.influencer.title', language)}
-                  description={t('bento.influencer.description', language)}
-                  profileName={t('profile.influencerCreators', language)}
-                  profileIcon={<Sparkles className="w-5 h-5" />}
+                  title="Reklam Videosu"
+                  description="Profesyonel reklam içerikleri"
+                  profileName="Ad Studio"
+                  profileIcon={<Rocket className="w-5 h-5" />}
                   whiteProfileIcon={true}
                   header={
                     <div className="flex h-full w-full items-center justify-center rounded-lg overflow-hidden">
@@ -127,10 +184,10 @@ export default function HomePageContent() {
                           muted 
                           playsInline
                           preload="metadata"
-                          poster={mediaUrls.posters.video1feedbird}
+                          poster={mediaUrls.posters.video4}
                           className="h-full w-full object-cover"
                         >
-                            <source src={mediaUrls.video1feedbird} type="video/mp4" />
+                            <source src={mediaUrls.video4} type="video/webm" />
                         </video>
                         
                         {/* Action buttons */}
@@ -204,65 +261,6 @@ export default function HomePageContent() {
 
       <div className="w-full flex justify-center my-20 px-4">
         <BentoGrid className="max-w-6xl w-full md:grid-cols-4 place-items-center">
-        <BentoGridItem
-          title={t('bento.instagramProfile.title', language)}
-          description={t('bento.instagramProfile.description', language)}
-          profileName={t('profile.socialMedia', language)}
-          profileIcon={<Trophy className="w-5 h-5" />}
-          whiteProfileIcon={true}
-          header={
-            <div className="flex h-full w-full items-center justify-center rounded-lg overflow-hidden bg-gradient-to-br from-purple-50 to-pink-50 p-4">
-              <div className="w-full max-w-[320px] rounded-lg bg-white shadow-sm">
-                {/* Profile Header */}
-                <div className="space-y-3 p-4">
-                  <div className="flex items-center gap-4">
-                    <div className="h-20 w-20 rounded-full bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 p-[2px]">
-                      <div className="h-full w-full rounded-full bg-white p-[2px]">
-                        <img
-                          src={mediaUrls.instagram5}
-                          alt="Profile"
-                          className="h-full w-full rounded-full object-cover"
-                        />
-                      </div>
-                    </div>
-                    <div className="grid flex-1 grid-cols-3 gap-2 text-center">
-                      <div>
-                        <div className="text-sm font-semibold">1.2K</div>
-                        <div className="text-xs text-gray-500">Posts</div>
-                      </div>
-                      <div>
-                        <div className="text-sm font-semibold">45.8K</div>
-                        <div className="text-xs text-gray-500">Followers</div>
-                      </div>
-                      <div>
-                        <div className="text-sm font-semibold">892</div>
-                        <div className="text-xs text-gray-500">Following</div>
-                      </div>
-                    </div>
-                  </div>
-                  <div>
-                    <div className="text-sm font-semibold">Antalya Hotel</div>
-                    <div className="mt-1 text-xs text-gray-600">Professional Account</div>
-                  </div>
-                </div>
-
-                {/* Grid Posts */}
-                <div className="grid grid-cols-3 gap-[2px] bg-gray-100">
-                  {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((i) => (
-                    <div key={i} className="aspect-square overflow-hidden">
-                      <img
-                        src={getInstagramImage(i)}
-                        alt={`Instagram post ${i}`}
-                        className="h-full w-full object-cover"
-                      />
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          }
-          className="md:col-span-2 md:row-span-2"
-        />
         <BentoGridItem
           title={t('bento.corporateIdentity.title', language)}
           description={t('bento.corporateIdentity.description', language)}

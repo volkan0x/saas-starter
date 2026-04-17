@@ -50,7 +50,7 @@ export const videos: SliderVideo[] = [
   // },
   {
     id: "flora-garden-hotel",
-    title: "Flora Garden Hotel",
+    title: "Flora Garden Hotel (Antalya)",
     category: "Hotel",
     date: "March 2026",
     src: mediaUrls.floraLanding,
