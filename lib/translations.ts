@@ -4,17 +4,17 @@ export const translations: Record<Language, Record<string, string>> = {
   TR: {
     // Hero Section
     'hero.title.line1': '5+ yıl deneyim ile uzman',
-    'hero.title.line2': 'hizmetleri.',
+    'hero.title.line2': 'tasarım hizmetleri.',
     'hero.feature1': '✨ Markanızla uyumlu birinci sınıf içerik.',
     'hero.feature2': '💰 Alternatiflere göre %80 daha ucuz.',
     'hero.feature3': '👥 İnsanlar tarafından yapıldı, yapay zeka değil',
     'hero.platforms': 'Desteklenen sosyal medya platformları',
 
     // Flip Words
-    'flip.socialMedia': 'sosyal medya',
-    'flip.videoAds': 'video reklamları',
-    'flip.graphicDesign': 'grafik tasarım',
-    'flip.digitalMarketing': 'dijital pazarlama',
+    'flip.socialMedia': 'web',
+    'flip.videoAds': 'video',
+    'flip.graphicDesign': 'grafik',
+    'flip.digitalMarketing': '3d',
 
     // Bento Grid
     'bento.drone.title': 'Drone Tanıtım Videoları',
