@@ -87,7 +87,7 @@ export const mediaUrls = {
   trr: `${BLOB_BASE}/TRr.webp`,
   frame: `${BLOB_BASE}/frame.webp`,
   tayf: `${BLOB_BASE}/tayf.webp`,
-  tummyTuck: "/Tummy-Tuck.png",
+  tummyTuck: "/tummy-tuck.png",
   logoAnimation: `${BLOB_BASE}/logo-animation.jpg`,
 
   // Instagram images (WebP)
