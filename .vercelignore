@@ -44,6 +44,7 @@ public/*.webm
 public/*.jpg
 public/*.jpeg
 public/*.png
+!public/tummy-tuck.png
 public/*.gif
 public/video/
 
