@@ -164,6 +164,7 @@ export default function HomePageContent() {
                           poster={mediaUrls.posters.video4}
                           className="h-full w-full object-cover"
                         >
+                            <source src={mediaUrls.video4NoaudioMp4} type="video/mp4" />
                             <source src={mediaUrls.video4} type="video/webm" />
                         </video>
                         
